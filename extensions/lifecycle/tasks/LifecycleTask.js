@@ -52,7 +52,7 @@ const MAX_RETRIES = 4;
 const MAX_RETRIES_TOTAL = CONCURRENCY_DEFAULT * MAX_RETRIES * 10;
 
 /**
- * compare 2 version by their stale dates returning:
+ * compare two versions by their stale dates returning:
  * - LT (-1) if v1 is less than v2
  * - EQ (0) if v1 equals v2
  * - GT (1) if v1 is greater than v2
