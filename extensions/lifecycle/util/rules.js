@@ -72,7 +72,7 @@ function _mergeParams(currentDate, { currents = [], nonCurrents = [], orphans = 
  * @param {boolean} options.transitionOneDayEarlier - moves lifecycle transition deadlines 1 day earlier
  * @param {number} options.timeProgressionFactor - decrease the weight attributed to a day in order to
  * expedite the lifecycle of objects.
- * @return {Object} info               - listing informations { params, listType, remainings }
+ * @return {Object} info               - listing informations { params, listType, remaining }
  */
 function _getParamsFromListings(bucketName, currentDate, listings, options) {
     const listingsParams = _mergeParams(currentDate, listings, options);
@@ -100,7 +100,7 @@ function _getParamsFromListings(bucketName, currentDate, listings, options) {
         listingsParams.shift(); // remove the first element
     }
 
-    return { params, listType, remainings: listingsParams };
+    return { params, listType, remaining: listingsParams };
 }
 
 /**
@@ -113,7 +113,7 @@ function _getParamsFromListings(bucketName, currentDate, listings, options) {
  * @param {string} details.keyMarker - next key marker for versioned buckets
  * @param {string} details.versionIdMarker - next version id marker for versioned buckets
  * @param {string} details.marker - next marker for non-versioned buckets
- * @return {Object} info - listing informations { params, listType, remainings }
+ * @return {Object} info - listing informations { params, listType, remaining }
  */
 function _getParamsFromDetails(bucketName, details) {
     const { prefix, beforeDate, listType, storageClass } = details;
@@ -145,7 +145,7 @@ function _getParamsFromDetails(bucketName, details) {
         params.ExcludedDataStoreName = storageClass;
     }
 
-    return { params, listType, remainings: [] };
+    return { params, listType, remaining: [] };
 }
 
 /**
@@ -170,7 +170,7 @@ function _getParamsFromDetails(bucketName, details) {
  * @param {number} options.timeProgressionFactor - decreases the weight attributed to a day in order to
  * expedite the lifecycle of objects.
  *
- * @return {Object} info - listings informations { params, listingDetails, remainings }
+ * @return {Object} info - listings informations { params, listingDetails, remaining }
  * @return {Object} info.params - params of the first lifecycle listing
  * @return {string} info.params.Bucket - bucket name
  * @return {string} info.params.Prefix - limits the response to keys that begin with the specified prefix
@@ -180,7 +180,7 @@ function _getParamsFromDetails(bucketName, details) {
  * @return {string} info.params.Marker - for versioned buckets, where to start listing from
  * @return {string} [info.params.BeforeDate] - limit keys with last-modified older than beforeDate
  * @return {string} info.listType -  type of listing (current, noncurrent or orphan)
- * @return {Array} info.remainings - array of remaining listings
+ * @return {Array} info.remaining - array of remaining listings
  */
 function rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options) {
     const bucketName = bucketData.target.bucket;
