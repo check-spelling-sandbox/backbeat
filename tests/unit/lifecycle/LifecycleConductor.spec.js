@@ -622,7 +622,7 @@ describe('Lifecycle Conductor', () => {
             });
         });
 
-        it('should not use any filter when listing from from mongodb', done => {
+        it('should not use any filter when listing from mongodb', done => {
             const lcConductor = makeLifecycleConductorWithFilters({
                 bucketSource: 'mongodb',
             }, []);
@@ -643,7 +643,7 @@ describe('Lifecycle Conductor', () => {
             });
         });
 
-        it('should filter by account when listing from from mongodb', done => {
+        it('should filter by account when listing from mongodb', done => {
             const lcConductor = makeLifecycleConductorWithFilters({
                 accountsDenied: [`${accountName1}:${account1}`],
                 bucketSource: 'mongodb',
@@ -671,7 +671,7 @@ describe('Lifecycle Conductor', () => {
             });
         });
 
-        it('should filter by bucket when listing from from mongodb', done => {
+        it('should filter by bucket when listing from mongodb', done => {
             const lcConductor = makeLifecycleConductorWithFilters({
                 bucketsDenied: [bucket2],
                 bucketSource: 'mongodb',
@@ -697,7 +697,7 @@ describe('Lifecycle Conductor', () => {
             });
         });
 
-        it('should use the resume marker when listing from from mongodb', done => {
+        it('should use the resume marker when listing from mongodb', done => {
             const lcConductor = makeLifecycleConductorWithFilters({
                 bucketSource: 'mongodb',
             }, []);
@@ -722,7 +722,7 @@ describe('Lifecycle Conductor', () => {
             });
         });
 
-        it('should filter by account and bucket when listing from from mongodb', done => {
+        it('should filter by account and bucket when listing from mongodb', done => {
             const lcConductor = makeLifecycleConductorWithFilters({
                 accountsDenied: [`${accountName1}:${account1}`],
                 bucketsDenied: [bucket2],
