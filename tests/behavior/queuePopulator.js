@@ -194,7 +194,7 @@ describe('queuePopulator', () => {
                 queuePopulator.processLogEntries({ maxRead: 10 }, next);
             },
             (counters, next) => {
-                // 2 reads expected: master key and and versioned key
+                // 2 reads expected: master key and versioned key
                 // 1 queued: versioned key only
                 assert.strictEqual(counters[0].readEntries, 2);
                 assert.deepStrictEqual(counters[0].queuedEntries,
@@ -264,7 +264,7 @@ describe('queuePopulator', () => {
                 queuePopulator.processLogEntries({ maxRead: 10 }, next);
             },
             (counters, next) => {
-                // 2 reads expected: master key and and versioned key
+                // 2 reads expected: master key and versioned key
                 // 1 queued: versioned key only
                 assert.strictEqual(counters[0].readEntries, 200);
                 assert.deepStrictEqual(counters[0].queuedEntries,

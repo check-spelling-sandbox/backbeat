@@ -105,7 +105,7 @@ class BackbeatTestConsumer extends BackbeatConsumer {
     }
 
     /**
-     * Consume messages from the topic and and wait until all messages
+     * Consume messages from the topic and wait until all messages
      * in {@link messages} have been received exactly once
      *
      * All messages are expected to be received in order, and exactly
@@ -127,7 +127,7 @@ class BackbeatTestConsumer extends BackbeatConsumer {
     }
 
     /**
-     * Consume messages from the topic and and wait until all messages
+     * Consume messages from the topic and wait until all messages
      * in {@link messages} have been received exactly once.
      *
      * Messages can be received in any order.
