@@ -828,7 +828,7 @@ dashboard = (
         title='Replication',
         editable=True,
         refresh='30s',
-        tags=['Backeat'],
+        tags=['Backbeat'],
         timezone='',
         inputs=[
             DataSourceInput(
