@@ -348,14 +348,14 @@ describe('KafkaConnectWrapper', () => {
         let request;
         let requestStub;
         let endStub;
-        let writetStub;
+        let writeStub;
 
         beforeEach(() => {
             response = new events.EventEmitter();
             request = new events.EventEmitter();
-            writetStub = sinon.stub();
+            writeStub = sinon.stub();
             endStub = sinon.stub();
-            request.write = writetStub;
+            request.write = writeStub;
             request.end = endStub;
             requestStub = sinon.stub(http, 'request').callsArgWith(1, response)
                 .returns(request);
@@ -414,7 +414,7 @@ describe('KafkaConnectWrapper', () => {
                     method: 'POST',
                     path: '/connectors',
                 }));
-                assert(writetStub.calledOnceWith(JSON.stringify({
+                assert(writeStub.calledOnceWith(JSON.stringify({
                     name: 'connector-name',
                     config: {},
                 })));
