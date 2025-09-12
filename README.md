@@ -143,7 +143,7 @@ chmod 400 ./tests/utils/keyfile
 VAULT_DB_BACKEND="MONGODB" yarn start
 ```
 
-> mongodb can be installed follwing these [steps](https://github.com/scality/backbeat/blob/development/8.3/docs/run-oob-locally.md#mongo-db-deploy-replica-set)
+> mongodb can be installed following these [steps](https://github.com/scality/backbeat/blob/development/8.3/docs/run-oob-locally.md#mongo-db-deploy-replica-set)
 
 ### CloudServer
 
