@@ -288,7 +288,7 @@ describe('Lifecycle Conductor', () => {
                     [], // job state
                     indexesForFeature.lifecycle.v2, // getIndex response
                     null, // metadata proxy error
-                    true, // flag for status ofin progress job retrieval
+                    true, // flag for status of in progress job retrieval
                     'mongodb',
                 ],
                 [
