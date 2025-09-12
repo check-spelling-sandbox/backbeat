@@ -100,7 +100,7 @@ class RulesReducer {
      * _getListingsForVersionedBucket: gets listings infos from lifecycle rules of a versioned bucket
      * NOTE: On a versioned bucket, three types of listing can be performed:
      * - "current" targeting current objects (Expiration and Transitions).
-     * - "noncurrent" targeting non-current obejcts (NonCurrentExpiration and NonCurrentTransitions).
+     * - "noncurrent" targeting non-current objects (NonCurrentExpiration and NonCurrentTransitions).
      * - "orphan" targeting orphan delete markers (Expiration and Expiration.ExpiredObjectDeleteMarker).
      * @return {object} aggregatedRules - aggregated rules for each type
      * @return {array} aggregatedRules.currents - array of rules
