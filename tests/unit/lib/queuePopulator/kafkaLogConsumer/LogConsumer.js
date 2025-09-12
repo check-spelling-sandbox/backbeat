@@ -53,7 +53,7 @@ describe('LogConsumer', () => {
 
     describe('_waitForAssignment', () => {
         it('should wait for consumer group to balance', done => {
-            const waitAssignementSpy = sinon.spy(logConsumer, '_waitForAssignment');
+            const waitAssignmentSpy = sinon.spy(logConsumer, '_waitForAssignment');
             const getAssignemntsStub = sinon.stub();
             getAssignemntsStub.onCall(0).returns([]);
             getAssignemntsStub.onCall(1).returns([{
@@ -64,7 +64,7 @@ describe('LogConsumer', () => {
                 assignments: getAssignemntsStub,
             };
             logConsumer._waitForAssignment(0, () => {
-                assert.strictEqual(waitAssignementSpy.getCall(1).args.at(0), 2000);
+                assert.strictEqual(waitAssignmentSpy.getCall(1).args.at(0), 2000);
                 return done();
             });
         }).timeout(5000);
@@ -132,7 +132,7 @@ describe('LogConsumer', () => {
 
     describe('readRecords', () => {
         it('should return stream', done => {
-            const waitAssignementStub = sinon.stub(logConsumer, '_waitForAssignment')
+            const waitAssignmentStub = sinon.stub(logConsumer, '_waitForAssignment')
                 .callsArg(1);
             const storeOffsetsStub = sinon.stub(logConsumer, '_storeCurrentOffsets')
                 .callsArg(0);
@@ -140,7 +140,7 @@ describe('LogConsumer', () => {
                 .callsArg(1);
             logConsumer._resetRecordStream();
             logConsumer.readRecords({ limit: 1 }, (err, res) => {
-                assert(waitAssignementStub.called);
+                assert(waitAssignmentStub.called);
                 assert(storeOffsetsStub.called);
                 assert(consumeKafkaStub.called);
                 assert.ifError(err);
@@ -152,22 +152,22 @@ describe('LogConsumer', () => {
         });
 
         it('should fail if consumer group failed to stabilize', done => {
-            const waitAssignementStub = sinon.stub(logConsumer, '_waitForAssignment')
+            const waitAssignmentStub = sinon.stub(logConsumer, '_waitForAssignment')
                 .callsArgWith(1, errors.InternalError);
             logConsumer.readRecords({ limit: 1 }, err => {
-                assert(waitAssignementStub.called);
+                assert(waitAssignmentStub.called);
                 assert.deepEqual(err, errors.InternalError);
                 return done();
             });
         });
 
         it('should fail if it can\'t store offsets', done => {
-            const waitAssignementStub = sinon.stub(logConsumer, '_waitForAssignment')
+            const waitAssignmentStub = sinon.stub(logConsumer, '_waitForAssignment')
                 .callsArg(1);
             const storeOffsetsStub = sinon.stub(logConsumer, '_storeCurrentOffsets')
                 .callsArgWith(0, errors.InternalError);
             logConsumer.readRecords({ limit: 1 }, err => {
-                assert(waitAssignementStub.called);
+                assert(waitAssignmentStub.called);
                 assert(storeOffsetsStub.called);
                 assert.deepEqual(err, errors.InternalError);
                 return done();
@@ -175,14 +175,14 @@ describe('LogConsumer', () => {
         });
 
         it('should fail if it can\'t consume kafka messages', done => {
-            const waitAssignementStub = sinon.stub(logConsumer, '_waitForAssignment')
+            const waitAssignmentStub = sinon.stub(logConsumer, '_waitForAssignment')
                 .callsArg(1);
             const storeOffsetsStub = sinon.stub(logConsumer, '_storeCurrentOffsets')
                 .callsArg(0);
             const consumeKafkaStub = sinon.stub(logConsumer, '_consumeKafkaMessages')
                 .callsArgWith(1, errors.InternalError);
             logConsumer.readRecords({ limit: 1 }, err => {
-                assert(waitAssignementStub.called);
+                assert(waitAssignmentStub.called);
                 assert(storeOffsetsStub.called);
                 assert(consumeKafkaStub.called);
                 assert.deepEqual(err, errors.InternalError);
