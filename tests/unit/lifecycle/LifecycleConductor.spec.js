@@ -403,14 +403,14 @@ describe('Lifecycle Conductor', () => {
 
         tests.forEach(([msg, input, expected]) =>
             it(msg, done => {
-                const [inJobs, getIndexes, mockError, getInProgressSucceeded, bucektSource] = input;
+                const [inJobs, getIndexes, mockError, getInProgressSucceeded, bucketSource] = input;
                 const [expectedJobs, putIndexes, expectedVersion] = expected;
 
                 const client = new BackbeatMetadataProxyMock();
                 conductor.clientManager.getBackbeatMetadataProxy = () => client;
                 conductor.activeIndexingJobsRetrieved = getInProgressSucceeded;
                 conductor.activeIndexingJobs = inJobs;
-                conductor._bucketSource = bucektSource;
+                conductor._bucketSource = bucketSource;
                 client.indexesObj = getIndexes;
                 client.error = mockError;
 
