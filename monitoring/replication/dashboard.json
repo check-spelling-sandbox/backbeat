@@ -1906,7 +1906,7 @@
     },
     {
       "datasource": "${DS_PROMETHEUS}",
-      "description": "Delay between the time an object is updated and the time itis picked up by Queue Populator.The precision is affected however by Prometheus polling interval,and delays up to this interval are expected.",
+      "description": "Delay between the time an object is updated and the time itis picked up by Queue Populator.The precision is affected however by Prometheus polling interval, and delays up to this interval are expected.",
       "editable": true,
       "error": false,
       "fieldConfig": {
