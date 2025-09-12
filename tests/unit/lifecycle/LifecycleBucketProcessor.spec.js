@@ -63,7 +63,7 @@ describe('Lifecycle Bucket Processor', () => {
                 pauseLocations: [],
                 expected: false,
             }, {
-                title: 'should return false if all lifecyle rules are disabled',
+                title: 'should return false if all lifecycle rules are disabled',
                 lcConfig: {
                     Rules: [
                         {

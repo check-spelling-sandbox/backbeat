@@ -262,7 +262,7 @@ describe('Lifecycle Conductor', () => {
             });
         });
 
-        it('should return v1 for non-lifecyled buckets', done => {
+        it('should return v1 for non-lifecycled buckets', done => {
             conductor._bucketSource = 'mongodb';
             conductor._indexesGetOrCreate(getTask(false), log, (err, taskVersion) => {
                 assert.ifError(err);

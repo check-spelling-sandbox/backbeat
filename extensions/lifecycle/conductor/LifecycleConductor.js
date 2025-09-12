@@ -36,7 +36,7 @@ const BUCKET_CHECKPOINT_PUSH_NUMBER = 50;
 const BUCKET_CHECKPOINT_PUSH_NUMBER_BUCKETD = 50;
 const ACCOUNT_SPLITTER = ':';
 
-const LIFEYCLE_CONDUCTOR_CLIENT_ID = 'lifecycle-conductor';
+const LIFECYCLE_CONDUCTOR_CLIENT_ID = 'lifecycle-conductor';
 
 /**
  * @class LifecycleConductor
@@ -125,7 +125,7 @@ class LifecycleConductor {
 
         this.logger = new Logger('Backbeat:Lifecycle:Conductor');
         this.vaultClientWrapper = new VaultClientWrapper(
-            LIFEYCLE_CONDUCTOR_CLIENT_ID,
+            LIFECYCLE_CONDUCTOR_CLIENT_ID,
             this.lcConfig.conductor.vaultAdmin,
             this._authConfig,
             this.logger,
