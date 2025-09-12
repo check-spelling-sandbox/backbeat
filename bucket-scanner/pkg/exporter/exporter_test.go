@@ -226,7 +226,7 @@ var _ = Describe("Prometheus Exporter", func() {
 			return statuses
 		}
 
-		It("should instanciate self-exporting metrics for promauto", func(done Done) {
+		It("should instantiate self-exporting metrics for promauto", func(done Done) {
 			defer close(done)
 
 			ctx, cancel := context.WithCancel(context.TODO())
