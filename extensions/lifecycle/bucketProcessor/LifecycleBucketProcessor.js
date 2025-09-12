@@ -388,7 +388,7 @@ class LifecycleBucketProcessor {
         producer.once('error', err => {
             this._log.error('error setting up kafka producer', {
                 error: err,
-                method: 'LifecycleBucketProcesso::_setupProducer',
+                method: 'LifecycleBucketProcessor::_setupProducer',
             });
             process.exit(1);
         });
