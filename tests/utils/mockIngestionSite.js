@@ -4,7 +4,7 @@ const config = require('../../lib/Config');
  * Mock the setting of ingestion buckets. We use the existing bootstrap list
  * from test config.json but change the first location to be a compatible type.
  * Also, just to indicate a change, the site names are appended with
- * "-ingestion". This is to keep 2 sites to stay compatible with existing tests.
+ * "-ingestion". This is to keep two sites to stay compatible with existing tests.
  * @return {undefined}
  */
 function setupIngestionSiteMock() {

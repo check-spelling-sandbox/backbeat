@@ -310,7 +310,7 @@ describe('MongoQueueProcessor', function mqp() {
 
     describe('::_processObjectQueueEntry', () => {
         function validateMetricReport(type, done) {
-            // only 2 types of metric type reports
+            // only two types of metric type reports
             assert(type === 'completed' || type === 'pendingOnly');
 
             const expectedMetricStore = [{
