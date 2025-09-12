@@ -40,7 +40,7 @@ updates in a FIFO order.
 
 This guide assumes the following:
 
-* Using MacOS
+* Using macOS
 * [`brew`](https://brew.sh/) is installed
 * `node` is installed (version 6.9.5)
 * `yarn` is installed (version 3.10.10)
