@@ -105,7 +105,7 @@ class LifecycleBucketProcessor {
 
         this.retryWrapper = new BackbeatTask(lcConfig.bucketProcessor.retry);
 
-        // helper object to facilitate the tracking of the the latest x
+        // helper object to facilitate the tracking of the latest x
         // noncurrent versions of an object when the field
         // `NewerNoncurrentVersions` is present.
         //

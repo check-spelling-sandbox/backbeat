@@ -24,7 +24,7 @@ class MultipleBucketsPipelineFactory extends PipelineFactory {
     /**
      * Makes new connector pipeline that includes
      * buckets assigned to this connector.
-     * @param {string[] | undefined} buckets buckets assigned to this connector
+     * @param {string[] | undefined} buckets the buckets assigned to this connector
      * @returns {string} new connector pipeline
      */
     getPipeline(buckets) {

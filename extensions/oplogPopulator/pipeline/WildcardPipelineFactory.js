@@ -25,7 +25,7 @@ class WildcardPipelineFactory extends PipelineFactory {
     /**
      * Create a pipeline for the connector, to listen to all
      * non-special collections.
-     * @param {string[] | undefined} buckets buckets assigned to this connector
+     * @param {string[] | undefined} buckets the buckets assigned to this connector
      * @returns {string} new connector pipeline
      */
     getPipeline(buckets) { // eslint-disable-line no-unused-vars
