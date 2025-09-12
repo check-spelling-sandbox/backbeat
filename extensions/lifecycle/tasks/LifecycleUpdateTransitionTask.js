@@ -155,7 +155,7 @@ class LifecycleUpdateTransitionTask extends BackbeatTask {
      * @param {Function} done - callback function
      * @return {undefined}
      */
-    handleSuccessfullTransition(entry, log, done) {
+    handleSuccessfulTransition(entry, log, done) {
         let locationToGC;
         return async.waterfall([
             next => this._getMetadata(entry, log, (err, objMD) => {
@@ -268,7 +268,7 @@ class LifecycleUpdateTransitionTask extends BackbeatTask {
             lastModified: 'target.lastModified',
         });
         if (entry.getStatus() === 'success') {
-            return this.handleSuccessfullTransition(entry, log, done);
+            return this.handleSuccessfulTransition(entry, log, done);
         }
 
         return this.handleFailedTransition(entry, log, done);
