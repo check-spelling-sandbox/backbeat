@@ -328,7 +328,7 @@ describe('NotificationQueuePopulator ::', () => {
             const processEntryStub = sinon.stub(notificationQueuePopulator, '_processObjectEntry');
             const entry = {
                 bucket: 'example-bucket',
-                key: 'examlpe-key',
+                key: 'example-key',
                 type: 'put',
                 value: '}{',
                 overheadFields: {
