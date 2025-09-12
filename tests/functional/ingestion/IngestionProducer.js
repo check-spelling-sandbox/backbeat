@@ -151,7 +151,7 @@ describe('ingestion producer tests with mock', () => {
 
     it('should find the correct raftId for the requested bucket', done => {
         this.iProducer.getRaftId('bucket1', (err, res) => {
-            // based on MetadataMock, raft 1 will have 'bucketfindraftid'
+            // based on MetadataMock, raft #1 will have 'bucketfindraftid'
             assert.ifError(err);
             assert.strictEqual(typeof res, 'string');
             assert.strictEqual(res, '1');
