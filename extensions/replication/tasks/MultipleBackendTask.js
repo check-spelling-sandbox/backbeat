@@ -623,7 +623,7 @@ class MultipleBackendTask extends ReplicateObject {
                     }
                     if (sourceEntry.getReplicationIsNFS()) {
                         // Check that the object state did not change upon
-                        // succesffuly putting part data to the destination.
+                        // successfully putting part data to the destination.
                         return this._checkMPUState(sourceEntry,
                             uploadId, log, err => next(err, res));
                     }
