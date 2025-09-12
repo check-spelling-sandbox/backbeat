@@ -154,9 +154,9 @@ class UpdateReplicationStatus extends BackbeatTask {
             return refreshedEntry.toPendingEntry(sourceEntry.getSite());
         }
         try {
-            const soureEntryTags = sourceEntry.getTags();
+            const sourceEntryTags = sourceEntry.getTags();
             const refreshedEntryTags = refreshedEntry.getTags();
-            assert.deepStrictEqual(soureEntryTags, refreshedEntryTags);
+            assert.deepStrictEqual(sourceEntryTags, refreshedEntryTags);
         } catch {
             return refreshedEntry.toPendingEntry(sourceEntry.getSite());
         }
