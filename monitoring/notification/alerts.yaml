@@ -84,7 +84,7 @@ groups:
     Labels:
       severity: warning
     Annotations:
-      description: "Notification failures are higher than warning threshold ${notificationFailuresWarningThreshold} for target {{ $labels.target }}"
+      description: "Notification failures exceed warning threshold ${notificationFailuresWarningThreshold} for target {{ $labels.target }}"
       summary: "Notification delivery to target {{ $labels.target }} degraded"
 
   - alert: NotificationDeliveryCritical
@@ -96,5 +96,5 @@ groups:
     Labels:
       severity: critical
     Annotations:
-      description: "Notification failures are higher than critical threshold ${notificationFailuresCriticalThreshold} for target {{ $labels.target }}"
+      description: "Notification failures exceed critical threshold ${notificationFailuresCriticalThreshold} for target {{ $labels.target }}"
       summary: "Notification delivery to target {{ $labels.target }} critical"
