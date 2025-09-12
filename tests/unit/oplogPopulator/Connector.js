@@ -177,7 +177,7 @@ describe('Connector', () => {
             assert.notEqual(oldDate, connector._state.lastUpdated);
         });
 
-        it('should only update date incase an opetation happened while updating connector', () => {
+        it('should only update date incase an operation happened while updating connector', () => {
             const oldDate = Date.now();
             connector._state.lastUpdated = oldDate;
             connector._state.bucketsGotModified = true;
