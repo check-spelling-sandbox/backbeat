@@ -314,7 +314,7 @@ class LifecycleBucketProcessor {
                 }
 
                 if (err.code === 'NoSuchBucket') {
-                    this._log.error('skipping non-existent bucket', { bucket });
+                    this._log.error('skipping nonexistent bucket', { bucket });
                     return cb();
                 }
 
