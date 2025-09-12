@@ -420,7 +420,7 @@ Update `extension.gc.auth`
 TODO: When we support `"type": "assumeRole",` for replication, this step
 will not be needed.
 
-Note: To retreive account1 information, use vaulclient:
+Note: To retrieve account1 information, use vaulclient:
 `bin/vaultclient get-account --account-name account1 --port 8600`
 
 ```json

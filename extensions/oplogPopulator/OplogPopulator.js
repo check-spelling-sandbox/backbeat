@@ -77,7 +77,7 @@ class OplogPopulator {
 
     /**
      * Connects to MongoDB using the MongoClientInterface
-     * and retreives the metastore collection
+     * and retrieves the metastore collection
      * @returns {Promise|undefined} undefined
      * @throws {InternalError}
      */

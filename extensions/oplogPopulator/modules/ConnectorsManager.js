@@ -186,14 +186,14 @@ class ConnectorsManager extends EventEmitter {
                         allowed: this._allocationStrategy.maximumBucketsPerConnector,
                     });
                 }
-                this._logger.debug('Successfully retreived old connector', {
+                this._logger.debug('Successfully retrieved old connector', {
                     method: 'ConnectorsManager._processOldConnectors',
                     connector: connector.name
                 });
                 return connector;
             }));
             const validConnectors = connectors.filter(c => !!c);
-            this._logger.info('Successfully retreived old connectors', {
+            this._logger.info('Successfully retrieved old connectors', {
                 method: 'ConnectorsManager._processOldConnectors',
                 numberOfConnectors: validConnectors.length,
             });

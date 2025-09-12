@@ -406,7 +406,7 @@ describe('LocationStatusManager', () => {
     });
 
     describe('_getPreviousLocationStates', () => {
-        it('should retreive location state', done => {
+        it('should retrieve location state', done => {
             sinon.stub(lsm, '_scheduleResumeJob');
             const date = new Date();
             const mongoLocations = [

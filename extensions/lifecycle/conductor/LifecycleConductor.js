@@ -210,7 +210,7 @@ class LifecycleConductor {
         log.debug('retrieving mongodb in progress indexing jobs');
         return this._mongodbClient.getIndexingJobs(log, (err, jobs) => {
             if (err) {
-                log.debug('failed to retrive mongodb in progress indexing jobs', {
+                log.debug('failed to retrieve mongodb in progress indexing jobs', {
                     method: '_indexesGetInProgressJobs',
                     error: err,
                 });

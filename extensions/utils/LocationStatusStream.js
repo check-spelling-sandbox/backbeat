@@ -56,7 +56,7 @@ class LocationStatusStream {
     }
 
     /**
-     * Connects to MongoDB using and retreives
+     * Connects to MongoDB using and retrieves
      * the location status collection
      * @param {function} cb callback
      * @returns {undefined} undefined

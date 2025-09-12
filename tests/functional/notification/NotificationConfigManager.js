@@ -92,7 +92,7 @@ describe('NotificationConfigManager ::', () => {
         assert.deepEqual(backend._cachedConfigs.get('example-bucket-2'),
             notificationConfiguration);
         assert.strictEqual(backend._cachedConfigs.count(), 2);
-        // should retreive config from cache without re-adding it
+        // should retrieve config from cache without re-adding it
         await manager.getConfig('example-bucket-1');
         assert.strictEqual(backend._cachedConfigs.count(), 2);
     });
