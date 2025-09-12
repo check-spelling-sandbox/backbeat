@@ -96,7 +96,7 @@ class ConnectorsManager extends EventEmitter {
             'topic.namespace.map': JSON.stringify({
                 '*': this._oplogTopic,
             }),
-            // hearbeat prevents having an outdated resume token in the connectors
+            // heartbeat prevents having an outdated resume token in the connectors
             // by constantly updating the offset to the last object in the oplog
             'heartbeat.interval.ms': this._heartbeatIntervalMs,
         };
