@@ -799,7 +799,7 @@ describe('rulesToParams with versioning Enabled', () => {
         assert.deepStrictEqual(result, expected);
     });
 
-    it('with Transtions and NoncurrentVersionTransitions rules', () => {
+    it('with Transitions and NoncurrentVersionTransitions rules', () => {
         const currentDate = Date.now();
         const expectedBeforeDate = (new Date(currentDate - ONE_DAY_IN_SEC)).toISOString();
         const expectedBeforeDate2 = (new Date(currentDate - 2 * ONE_DAY_IN_SEC)).toISOString();
@@ -839,7 +839,7 @@ describe('rulesToParams with versioning Enabled', () => {
         assert.deepStrictEqual(result, expected);
     });
 
-    it('with Expiration, Transtions, NoncurrentVersionExpiration and NoncurrentVersionTransitions rules', () => {
+    it('with Expiration, Transitions, NoncurrentVersionExpiration and NoncurrentVersionTransitions rules', () => {
         const currentDate = Date.now();
         const expectedBeforeDate = (new Date(currentDate - ONE_DAY_IN_SEC)).toISOString();
         const expectedBeforeDate2 = (new Date(currentDate - 2 * ONE_DAY_IN_SEC)).toISOString();
