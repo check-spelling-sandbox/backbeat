@@ -992,7 +992,7 @@ describe('rulesToParams with versioning Disabled', () => {
 });
 
 describe('rulesSupportTransition', () => {
-    it('sould return false if no transition rule supported', () => {
+    it('should return false if no transition rule supported', () => {
         const rules = [
             'Expiration',
             'NoncurrentVersionExpiration',
@@ -1001,7 +1001,7 @@ describe('rulesSupportTransition', () => {
         assert.strictEqual(rulesSupportTransition(rules), false);
     });
 
-    it('sould return true if "transitions" rule supported', () => {
+    it('should return true if "transitions" rule supported', () => {
         const rules = [
             'Expiration',
             'NoncurrentVersionExpiration',
@@ -1011,7 +1011,7 @@ describe('rulesSupportTransition', () => {
         assert.strictEqual(rulesSupportTransition(rules), true);
     });
 
-    it('sould return true if "noncurrentVersionTransition" rule supported', () => {
+    it('should return true if "noncurrentVersionTransition" rule supported', () => {
         const rules = [
             'Expiration',
             'NoncurrentVersionExpiration',
