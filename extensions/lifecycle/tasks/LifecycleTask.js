@@ -47,7 +47,7 @@ const MAX_RETRIES = 4;
 // We will retry a few times, but limit the total number of retries to ensure the
 // range is processed timely. Not retrying is not too bad, as the next run will.
 // We are processing 10 entries at a time, so a range should take around 1 second.
-// Since entries get processed in parallel, they will get distributed accross the
+// Since entries get processed in parallel, they will get distributed across the
 // parallel tasks, so the total delay of retries should about 1m30s.
 const MAX_RETRIES_TOTAL = CONCURRENCY_DEFAULT * MAX_RETRIES * 10;
 
