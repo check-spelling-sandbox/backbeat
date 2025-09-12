@@ -565,7 +565,7 @@ class MongoQueueProcessor {
             const objVal = sourceEntry.getValue();
             const params = {};
 
-            // Versioning suspended entries will have a version id but also a isNull tag.
+            // Versioning suspended entries will have a version id but also an isNull tag.
             // These master keys are considered a version and do not have a duplicate version,
             // we don't specify the version id and repairMaster in this case
             if (sourceEntry.getVersionId() && !sourceEntry.getIsNull()) {

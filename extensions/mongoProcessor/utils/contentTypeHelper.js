@@ -17,7 +17,7 @@ function _getMPUTagContent(entry) {
 
 /**
  * compares object tags between Zenko object and kafka object entry to see
- * if entry contains a object tagging change (for replication Content field)
+ * if entry contains an object tagging change (for replication Content field)
  * @param {ObjectQueueEntry} entry - object metadata entry from Kafka entry
  * @param {Object} zenkoObjMd - Zenko object metadata currently in Mongo
  * @return {undefined}
