@@ -146,7 +146,7 @@ class LifecycleDeleteObjectTask extends BackbeatTask {
             if (err?.statusCode === errors.MethodNotAllowed.code) {
                 log.warn('deleteObjectFromExpiration API not supported, falling back to deleteObject',
                     logDetails);
-                // fallback to s3 deleteObject when using a cloudserver that
+                // fall back to s3 deleteObject when using a cloudserver that
                 // doesn't support deleteObjectFromExpiration
                 const s3Client = this.getS3Client(accountId);
                 if (!s3Client) {

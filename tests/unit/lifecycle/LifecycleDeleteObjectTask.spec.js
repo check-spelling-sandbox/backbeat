@@ -279,7 +279,7 @@ describe('LifecycleDeleteObjectTask', () => {
         });
     });
 
-    it('should fallback to deleteObject method if deleteObjectFromExpiration is not supported', done => {
+    it('should fall back to deleteObject method if deleteObjectFromExpiration is not supported', done => {
         const entry = ActionQueueEntry.create('deleteObject')
             .setAttribute('target.owner', 'testowner')
             .setAttribute('target.bucket', 'testbucket')

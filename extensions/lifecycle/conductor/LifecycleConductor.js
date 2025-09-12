@@ -363,7 +363,7 @@ class LifecycleConductor {
             this._indexesGetOrCreate(t, log, (err, taskVersion) => {
                 if (err) {
                     // should not happen as indexes methods would
-                    // ignore the errors and fallback to v1 listing
+                    // ignore the errors and fall back to v1 listing
                     return taskDone(null, this._taskToMessage(t, lifecycleTaskVersions.v1, log));
                 }
                 return taskDone(null, this._taskToMessage(t, taskVersion, log));
@@ -425,7 +425,7 @@ class LifecycleConductor {
         async.waterfall([
             next => this._controlBacklog(next),
             // error retrieving in progress jobs should not stop the current batch
-            // fallback to V1 listings
+            // fall back to V1 listings
             next => this._indexesGetInProgressJobs(log, () => next(null)),
             next => {
                 this._batchInProgress = true;
