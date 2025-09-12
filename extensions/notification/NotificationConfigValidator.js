@@ -64,7 +64,7 @@ const joiSchema = joi.object({
     }),
     destinations: joi.array().items(destinationSchema).default([]),
     // TODO: BB-625 reset to being required after supporting probeserver in S3C
-    // for bucket notification proceses
+    // for bucket notification processes
     probeServer: probeServerJoi.optional(),
     bucketMetastore: joi.string().default('__metastore'),
     maxCachedConfigs: joi.number().default(1000),
