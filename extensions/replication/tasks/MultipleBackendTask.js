@@ -1184,7 +1184,7 @@ class MultipleBackendTask extends ReplicateObject {
                         errMessage));
                 }
                 // Only put/delete tags if object was previously
-                // replicated. Otherwise we replicate the whole object
+                // replicated. Otherwise, we replicate the whole object
                 // which should also replicate the updated tags.
                 const dataStoreVersionId = sourceEntry.getReplicationSiteDataStoreVersionId(this.site);
                 if (content.includes('PUT_TAGGING') && dataStoreVersionId) {
