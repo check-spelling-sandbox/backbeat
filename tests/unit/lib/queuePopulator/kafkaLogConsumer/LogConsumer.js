@@ -54,14 +54,14 @@ describe('LogConsumer', () => {
     describe('_waitForAssignment', () => {
         it('should wait for consumer group to balance', done => {
             const waitAssignmentSpy = sinon.spy(logConsumer, '_waitForAssignment');
-            const getAssignemntsStub = sinon.stub();
-            getAssignemntsStub.onCall(0).returns([]);
-            getAssignemntsStub.onCall(1).returns([{
+            const getAssignmentsStub = sinon.stub();
+            getAssignmentsStub.onCall(0).returns([]);
+            getAssignmentsStub.onCall(1).returns([{
                 topic: 'backbeat-oplog-topic',
                 partition: 0,
             }]);
             logConsumer._consumer = {
-                assignments: getAssignemntsStub,
+                assignments: getAssignmentsStub,
             };
             logConsumer._waitForAssignment(0, () => {
                 assert.strictEqual(waitAssignmentSpy.getCall(1).args.at(0), 2000);
