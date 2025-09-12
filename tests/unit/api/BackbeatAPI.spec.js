@@ -477,7 +477,7 @@ describe('BackbeatAPI', () => {
     });
 
     describe('_getFailedCRRResponse', () => {
-        it('should include role in the resposnse when auth type is "role"', done => {
+        it('should include role in the response when auth type is "role"', done => {
             const objectMD = {
                 'md-model-version': 2,
                 'owner-display-name': 'Bart',
