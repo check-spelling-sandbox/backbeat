@@ -116,7 +116,7 @@ const defaultLabels = {
     origin: 'replication',
 };
 /**
- * Contains methods to incrememt different metrics
+ * Contains methods to increment different metrics
  * @typedef {Object} MetricsHandler
  * @property {CounterInc} dataReplicationStatus - Increments the replication status metric for data operation
  * @property {CounterInc} metadataReplicationStatus - Increments the replication status metric for metadata operation

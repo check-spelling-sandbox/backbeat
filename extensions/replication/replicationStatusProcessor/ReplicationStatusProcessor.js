@@ -36,7 +36,7 @@ const {
  */
 
 /**
- * Contains methods to incrememt different metrics
+ * Contains methods to increment different metrics
  * @typedef {Object} ReplicationStatusMetricsHandler
  * @property {CounterInc} status - Increments the replication status metric
  * @property {CounterInc} replayAttempts - Increments the replay attempts metric
