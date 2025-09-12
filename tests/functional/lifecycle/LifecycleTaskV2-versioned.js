@@ -782,7 +782,7 @@ describe('LifecycleTaskV2 with bucket versioned', () => {
         });
     });
 
-    it('should publish one bucket entry if listing is trucated', done => {
+    it('should publish one bucket entry if listing is truncated', done => {
         const keyName = 'key1';
         const versionId = 'versionid1';
         const key = keyMock.nonCurrent({ keyName, daysEarlier: 1 });
@@ -860,7 +860,7 @@ describe('LifecycleTaskV2 with bucket versioned', () => {
         });
     });
 
-    it('should publish one bucket and one object entry if object is eligible and listing is trucated', done => {
+    it('should publish one bucket and one object entry if object is eligible and listing is truncated', done => {
         const keyName = 'key1';
         const versionId = 'versionid1';
         const key = keyMock.nonCurrent({ keyName, versionId, daysEarlier: 2 });
