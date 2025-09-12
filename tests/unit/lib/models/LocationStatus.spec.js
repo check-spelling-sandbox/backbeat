@@ -94,7 +94,7 @@ describe('LocationStatus', () => {
         assert.strictEqual(locationStatus._data.lifecycle.scheduledResume, null);
     });
 
-    it('should set resume shedule', () => {
+    it('should set resume schedule', () => {
         const date = new Date();
         locationStatus.resumeLocation('crr', date);
         assert.strictEqual(locationStatus._data.crr.paused, true);
