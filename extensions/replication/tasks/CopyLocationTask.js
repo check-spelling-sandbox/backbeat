@@ -634,7 +634,7 @@ class CopyLocationTask extends BackbeatTask {
         attachReqUids(destReq, log);
         return destReq.send((err, data) => {
             if (err) {
-                log.error('an error occurred on initating MPU to S3',
+                log.error('an error occurred on initiating MPU to S3',
                 Object.assign({
                     method: 'CopyLocationTask._initiateMPU',
                     error: err.message,

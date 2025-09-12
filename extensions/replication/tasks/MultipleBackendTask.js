@@ -493,7 +493,7 @@ class MultipleBackendTask extends ReplicateObject {
             if (err) {
                 // eslint-disable-next-line no-param-reassign
                 err.origin = 'source';
-                log.error('an error occurred on initating MPU to S3', {
+                log.error('an error occurred on initiating MPU to S3', {
                     method: 'MultipleBackendTask._initiateMPU',
                     entry: sourceEntry.getLogInfo(),
                     origin: 'target',
