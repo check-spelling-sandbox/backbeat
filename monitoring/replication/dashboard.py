@@ -69,7 +69,7 @@ class Metrics:
         's3_replication_rpo_seconds',
         namespace="${namespace}", job="${job_data_processor}",
     ).with_description(
-        'RPO is defined as the difference between the time an object was '
+        'RPO is defined as the difference between the time that an object was '
         'written to and the time when it is picked for replication by the '
         'data-processor'
     )
@@ -445,7 +445,7 @@ replication_latency = TimeSeries(
 queue_populator_lag = TimeSeries(
     title='Replication populator lag',
     description=(
-        'Delay between the time an object is updated and the time it'
+        'Delay between the time that an object is updated and the time it'
         'is picked up by Queue Populator.'
         ''
         'The precision is affected however by Prometheus polling interval,'

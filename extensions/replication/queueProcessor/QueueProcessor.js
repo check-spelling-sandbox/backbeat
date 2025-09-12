@@ -106,7 +106,7 @@ const timeElapsedMetric = ZenkoMetrics.createHistogram({
 
 const rpoMetric = ZenkoMetrics.createHistogram({
     name: 's3_replication_rpo_seconds',
-    help: 'Difference between the time the object is updated and the time it ' +
+    help: 'Difference between the time that the object is updated and the time it ' +
           'is picked up for replication',
     labelNames: ['origin', 'serviceName', 'location'],
     buckets: [1, 10, 30, 60, 120, 300, 600],

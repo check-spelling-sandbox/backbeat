@@ -169,7 +169,7 @@ groups:
 
         This may indicate an issue with Kafka or the data-processor.
 
-        RPO is the delay between the time the object is updated and when it is picked up by the
+        RPO is the delay between the time that the object is updated and when it is picked up by the
         replication-processor.
       summary: "High replication RPO"
 
@@ -187,7 +187,7 @@ groups:
         
         This may indicate an issue with Kafka or the data-processor.
 
-        RPO is the delay between the time the object is updated and when it is picked up by the
+        RPO is the delay between the time that the object is updated and when it is picked up by the
         replication-processor.
       summary: "Very high replication RPO"
 

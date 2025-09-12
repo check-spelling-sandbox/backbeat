@@ -45,8 +45,8 @@ class QueueProcessor extends EventEmitter {
      *   consumer group ID
      * @param {String} [notifConfig.queueProcessor.concurrency=1000] -
      * how many notifications can be processed concurrently, between
-     * the time they are consumed from the internal Kafka queue and
-     * the time a delivery report is received from the external Kafka
+     * the time that they are consumed from the internal Kafka queue and
+     * the time that a delivery report is received from the external Kafka
      * broker (see also {@link destinationConfig.pollIntervalMs})
      * @param {Object} notifConfig.queueProcessor.retry - Object keyed by location type
      * (e.g., `aws_s3`, `azure`, `gcp`, `scality`), defining retry parameters for each location type.

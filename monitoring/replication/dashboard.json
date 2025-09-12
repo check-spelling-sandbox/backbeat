@@ -1373,7 +1373,7 @@
     },
     {
       "datasource": "${DS_PROMETHEUS}",
-      "description": "RPO is defined as the difference between the time an object was written to and the time when it is picked for replication by the data-processor",
+      "description": "RPO is defined as the difference between the time that an object was written to and the time when it is picked for replication by the data-processor",
       "editable": true,
       "error": false,
       "fieldConfig": {
@@ -1705,7 +1705,7 @@
     },
     {
       "datasource": "${DS_PROMETHEUS}",
-      "description": "RPO is defined as the difference between the time an object was written to and the time when it is picked for replication by the data-processor",
+      "description": "RPO is defined as the difference between the time that an object was written to and the time when it is picked for replication by the data-processor",
       "editable": true,
       "error": false,
       "fieldConfig": {
@@ -1906,7 +1906,7 @@
     },
     {
       "datasource": "${DS_PROMETHEUS}",
-      "description": "Delay between the time an object is updated and the time it is picked up by Queue Populator.The precision is affected however by Prometheus polling interval, and delays up to this interval are expected.",
+      "description": "Delay between the time that an object is updated and the time it is picked up by Queue Populator.The precision is affected however by Prometheus polling interval, and delays up to this interval are expected.",
       "editable": true,
       "error": false,
       "fieldConfig": {
