@@ -173,7 +173,7 @@ describe('LifecycleTaskV2 with bucket non-versioned', () => {
         });
     });
 
-    it('should not publish any entry if detail section is comming from the old lifecycle task', done => {
+    it('should not publish any entry if detail section is coming from the old lifecycle task', done => {
         const keyName = 'key1';
         const key = keyMock.current({ keyName, daysEarlier: 2 });
         const contents = [key];

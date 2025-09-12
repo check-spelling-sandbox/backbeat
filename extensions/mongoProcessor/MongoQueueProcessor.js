@@ -210,7 +210,7 @@ class MongoQueueProcessor {
         const key = entry.getObjectKey();
         const params = {};
 
-        // master keys with a 'null' version id comming from
+        // master keys with a 'null' version id coming from
         // a versioning suspended bucket are considered a version
         // we should not specify the version id in this case
         if (versionId && !(entry.getIsNull && entry.getIsNull())) {
