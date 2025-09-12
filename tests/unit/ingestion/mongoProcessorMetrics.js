@@ -26,7 +26,7 @@ describe('MongoProcessorMetrics', () => {
     });
 
     it('onIngestionProcessed should observe values', async () => {
-        const elapsedTimeinMS = 5000;
+        const elapsedTimeInMS = 5000;
         const status = 'success';
 
         const elapsedMetric = ZenkoMetrics.getMetric(
@@ -36,7 +36,7 @@ describe('MongoProcessorMetrics', () => {
         const initialValues = (await elapsedMetric.get()).values;
         assert.strictEqual(initialValues.length, 0);
 
-        MongoProcessorMetrics.onIngestionProcessed(elapsedTimeinMS, status);
+        MongoProcessorMetrics.onIngestionProcessed(elapsedTimeInMS, status);
 
         // after observe.
         const totalValues = (await elapsedMetric.get()).values;
@@ -54,7 +54,7 @@ describe('MongoProcessorMetrics', () => {
         // So 0 processed ingestion took less than 5ms, 10ms, 25ms, 50ms, 100ms 250ms, 500ms, 750ms, 1s
         // So 1 processed ingestion took less than or equal to 5s, 10s and +Inf (biggest value)
         bucketMetrics.forEach(v => {
-            if (v.labels.le >= (elapsedTimeinMS / 1000) || v.labels.le === '+Inf') {
+            if (v.labels.le >= (elapsedTimeInMS / 1000) || v.labels.le === '+Inf') {
                 assert.strictEqual(v.value, 1, `value for ${v.labels.le} is invalid`);
             } else {
                 assert.strictEqual(v.value, 0, `value for ${v.labels.le} is invalid`);
