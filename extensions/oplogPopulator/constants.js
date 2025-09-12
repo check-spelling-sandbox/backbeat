@@ -24,7 +24,7 @@ const constants = {
         'value.converter.schemas.enable': false,
         'value.converter': 'org.apache.kafka.connect.storage.StringConverter',
         // Kafka message key config
-        // The message key is set to only contain the bucket where the event happend.
+        // The message key is set to only contain the bucket where the event happened.
         // This will make events of the same bucket always land in the same partition
         // as they will have the same key
         'output.format.key': 'schema',
