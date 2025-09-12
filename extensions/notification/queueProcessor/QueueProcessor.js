@@ -32,7 +32,7 @@ class QueueProcessor extends EventEmitter {
      * kafka topic dedicated to dispatch messages to a destination/target.
      *
      * @constructor
-     * @param {Object} mongoConfig - mongodb connnection configuration object
+     * @param {Object} mongoConfig - mongodb connection configuration object
      * @param {Object} zkConfig - zookeeper configuration object
      * @param {Object} kafkaConfig - kafka configuration object
      * @param {string} kafkaConfig.hosts - list of kafka brokers
