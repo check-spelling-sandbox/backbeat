@@ -133,7 +133,7 @@ describe('MongoConfigManager ::', () => {
             });
         });
 
-        it('should fail when when getting the metadata db', () => {
+        it('should fail when getting the metadata db', () => {
             const manager = new MongoConfigManager(params);
             const getDbStub = sinon.stub().throws(errors.InternalError);
             sinon.stub(MongoClient.prototype, 'connect').resolves({

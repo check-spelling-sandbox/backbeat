@@ -438,7 +438,7 @@ describe('NotificationQueuePopulator ::', () => {
             });
         });
 
-        it('should remove config whe bucket is deleted', done => {
+        it('should remove config when bucket is deleted', done => {
             const processEntryStub = sinon.stub(notificationQueuePopulator, '_processObjectEntry').yields();
             const removeConfigStub = sinon.stub(notificationQueuePopulator.bnConfigManager, 'removeConfig')
                 .returns(true);
