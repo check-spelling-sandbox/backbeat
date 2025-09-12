@@ -651,7 +651,7 @@ class MongoQueueProcessor {
     }
 
     /**
-     * Get bucket info in memoize state if exists, otherwise fetch from Mongo
+     * Get bucket info in memoize state if exists; otherwise, fetch from Mongo
      * @param {ObjectQueueEntry} sourceEntry - object metadata entry
      * @param {Logger.newRequestLogger} log - request logger object
      * @param {function} cb - callback(error, BucketInfo)

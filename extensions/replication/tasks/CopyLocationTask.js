@@ -384,7 +384,7 @@ class CopyLocationTask extends BackbeatTask {
         log.debug('getting object range', Object.assign({
             range,
         }, actionEntry.getLogInfo()));
-        // A 0-byte object has no range, otherwise range is inclusive.
+        // A 0-byte object has no range; otherwise, range is inclusive.
         const size = range ? range.end - range.start + 1 : 0;
         let sourceReq = null;
         const { bucket, key, version } = actionEntry.getAttribute('target');

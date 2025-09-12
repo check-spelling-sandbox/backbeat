@@ -229,7 +229,7 @@ class MultipleBackendTask extends ReplicateObject {
             range,
         });
         const doneOnce = jsutil.once(done);
-        // A 0-byte object has no range, otherwise range is inclusive.
+        // A 0-byte object has no range; otherwise, range is inclusive.
         const size = range ? range.end - range.start + 1 : 0;
         let sourceReq = null;
         if (size !== 0) {
