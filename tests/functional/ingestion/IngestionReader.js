@@ -247,7 +247,7 @@ describe('ingestion reader tests with mock', function fD() {
                     next =>
                         this.ingestionReader._processPrepareEntries(batchState, next),
                 ], () => {
-                    // We have 8 records but one of these records has 2 entries, so
+                    // We have 8 records, but one of these records has 2 entries, so
                     // we expect total log entries to be 9
                     assert.deepStrictEqual(batchState.logStats, {
                         nbLogRecordsRead: 8, nbLogEntriesRead: 9,
