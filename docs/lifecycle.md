@@ -309,7 +309,7 @@ following:
 
     * if the request succeeds, do a DELETE request on the object
 
-    * NOTE: this has an intrisic race condition, we'll be working on
+    * NOTE: this has an intrinsic race condition, we'll be working on
       implementing the If-Unmodified-Since directly on the DELETE
       operation to get rid of this race.
 
