@@ -451,7 +451,7 @@ class QueueProcessor extends EventEmitter {
     }
 
     /**
-     * Setup the Redis Subscriber which listens for actions from other processes
+     * Set up the Redis Subscriber which listens for actions from other processes
      * (i.e. BackbeatAPI for pause/resume)
      * @param {object} redisConfig - redis ha config
      * @return {undefined}

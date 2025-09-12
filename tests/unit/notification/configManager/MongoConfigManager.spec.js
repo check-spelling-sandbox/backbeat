@@ -100,7 +100,7 @@ describe('MongoConfigManager ::', () => {
     });
 
     describe('_setupMongoClient ::', () => {
-        it('should setup the mongo client and get metastore collection', () => {
+        it('should set up the mongo client and get metastore collection', () => {
             const manager = new MongoConfigManager(params);
             const getCollectionStub = sinon.stub();
             const mongoCommandStub = sinon.stub().returns({

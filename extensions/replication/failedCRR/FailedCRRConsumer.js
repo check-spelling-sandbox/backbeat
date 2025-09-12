@@ -51,7 +51,7 @@ class FailedCRRConsumer {
         });
         consumer.on('error', err => {
             if (!consumerReady) {
-                this.logger.fatal('could not setup a backbeat consumer', {
+                this.logger.fatal('could not set up a backbeat consumer', {
                     method: 'FailedCRRConsumer.start',
                     error: err,
                 });

@@ -84,7 +84,7 @@ class LifecycleQueuePopulator extends QueuePopulatorExtension {
     }
 
     /**
-     * Setup a producer for each cold location
+     * Set up a producer for each cold location
      *
      * @param {function} cb - callback function
      * @return {undefined}

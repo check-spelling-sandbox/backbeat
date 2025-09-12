@@ -3,7 +3,7 @@ const { errors } = require('arsenal');
 class BaseConfigManager {
 
     /**
-     * Setup the config manager
+     * Set up the config manager
      * @param {Function} cb callback
      * @return {undefined}
      */

@@ -251,7 +251,7 @@ jobs:
         working-directory: .github/dockerfiles/ft
       - name: Create Zookeeper paths for tests with metadata
         run: |-
-          # Setup zookeeper paths for backbeat like we do in federation
+          # Set up zookeeper paths for backbeat like we do in federation
           docker exec ft-kafka-1 /opt/kafka_2.11-0.10.1.0/bin/zookeeper-shell.sh localhost:2181 create /backbeat ""
           docker exec ft-kafka-1 /opt/kafka_2.11-0.10.1.0/bin/zookeeper-shell.sh localhost:2181 create /backbeat/replication-populator ""
           docker exec ft-kafka-1 /opt/kafka_2.11-0.10.1.0/bin/zookeeper-shell.sh localhost:2181 create /backbeat/replication-populator/raft-id-dispatcher ""
