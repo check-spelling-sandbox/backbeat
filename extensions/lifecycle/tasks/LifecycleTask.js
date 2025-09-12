@@ -818,7 +818,7 @@ class LifecycleTask extends BackbeatTask {
             // Expiration.ExpiredObjectDeleteMarker rule's action does not apply
             // since object is not a delete marker.
             // AbortIncompleteMultipartUpload.DaysAfterInitiation rule's action does not apply
-            // since in-progress MPUs are being handled separetly prior to this checks.
+            // since in-progress MPUs are being handled separately prior to this checks.
         }
 
         if (rule.Transitions && rule.Transitions.length > 0
