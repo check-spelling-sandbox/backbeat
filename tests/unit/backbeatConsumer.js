@@ -157,7 +157,7 @@ describe('backbeatConsumer', () => {
         });
     });
 
-    describe('sequentialy consume from topic', () => {
+    describe('sequentially consume from topic', () => {
         let consumer;
 
         beforeEach(() => {
