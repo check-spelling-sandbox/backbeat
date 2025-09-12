@@ -1404,7 +1404,7 @@ describe('lifecycle task functional tests', function dF() {
             },
             {
                 message: 'should expire a version in a versioning enabled ' +
-                    'bucket with 1 or more non-current versions using basic ' +
+                    'bucket with one or more non-current versions using basic ' +
                     'expiration rule',
                 isDeleteMarker: false,
                 hasNonCurrentVersions: true,
@@ -1415,7 +1415,7 @@ describe('lifecycle task functional tests', function dF() {
             },
             {
                 message: 'should expire a version in a versioning suspended ' +
-                    'bucket with 1 or more non-current versions using basic ' +
+                    'bucket with one or more non-current versions using basic ' +
                     'expiration rule',
                 isDeleteMarker: false,
                 hasNonCurrentVersions: true,
@@ -1426,7 +1426,7 @@ describe('lifecycle task functional tests', function dF() {
             },
             {
                 message: 'should NOT expire a delete marker in a versioning ' +
-                    'enabled bucket with 1 or more non-current versions ' +
+                    'enabled bucket with one or more non-current versions ' +
                     'using basic expiration rule',
                 isDeleteMarker: true,
                 hasNonCurrentVersions: true,
@@ -1437,7 +1437,7 @@ describe('lifecycle task functional tests', function dF() {
             },
             {
                 message: 'should NOT expire a delete marker in a versioning ' +
-                    'suspended bucket with 1 or more non-current versions ' +
+                    'suspended bucket with one or more non-current versions ' +
                     'using basic expiration rule',
                 isDeleteMarker: true,
                 hasNonCurrentVersions: true,

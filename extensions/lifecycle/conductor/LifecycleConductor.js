@@ -107,7 +107,7 @@ class LifecycleConductor {
         this._batchInProgress = false;
 
         // this cache only needs to be the size of one listing.
-        // worst case scenario is 1 account per bucket:
+        // worst case scenario is one account per bucket:
         // - max size is this._concurrency, rotated entirely at each listing
         // best case scenario is only a few accounts for all buckets
         // - the cache never reaches max size and only a few calls to vault are issued
