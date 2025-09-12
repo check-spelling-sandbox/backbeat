@@ -181,7 +181,7 @@ tests:
         eval_time: 10m
         exp_alerts:
           - exp_annotations:
-              description: Replication error rate is higher than 0.1%
+              description: Replication error rate exceeds 0.1%
               summary: High ratio of replication errors
             exp_labels:
               severity: warning
@@ -193,7 +193,7 @@ tests:
         eval_time: 14m
         exp_alerts:
           - exp_annotations:
-              description: Replication error rate is higher than 0.1%
+              description: Replication error rate exceeds 0.1%
               summary: High ratio of replication errors
             exp_labels:
               severity: warning
@@ -205,7 +205,7 @@ tests:
         eval_time: 15m
         exp_alerts:
           - exp_annotations:
-              description: Replication error rate is higher than 0.1%
+              description: Replication error rate exceeds 0.1%
               summary: High ratio of replication errors
             exp_labels:
               severity: warning
@@ -213,7 +213,7 @@ tests:
         eval_time: 15m
         exp_alerts:
           - exp_annotations:
-              description: Replication error rate is higher than 1%
+              description: Replication error rate exceeds 1%
               summary: Very high ratio of replication errors
             exp_labels:
               severity: critical
@@ -239,7 +239,7 @@ tests:
         exp_alerts:
           - exp_annotations:
               description: |
-                Replication RPO is higher than 600 seconds.
+                Replication RPO exceeds 600 seconds.
 
                 This may indicate an issue with Kafka or the data-processor.
 
@@ -257,7 +257,7 @@ tests:
         exp_alerts:
           - exp_annotations:
               description: |
-                Replication RPO is higher than 600 seconds.
+                Replication RPO exceeds 600 seconds.
 
                 This may indicate an issue with Kafka or the data-processor.
 
@@ -275,7 +275,7 @@ tests:
         exp_alerts:
           - exp_annotations:
               description: |
-                Replication RPO is higher than 600 seconds.
+                Replication RPO exceeds 600 seconds.
 
                 This may indicate an issue with Kafka or the data-processor.
 
@@ -289,7 +289,7 @@ tests:
         exp_alerts:
           - exp_annotations:
               description: |
-                Replication RPO is higher than 900 seconds.
+                Replication RPO exceeds 900 seconds.
 
                 This may indicate an issue with Kafka or the data-processor.
 
@@ -320,7 +320,7 @@ tests:
         exp_alerts:
           - exp_annotations:
               description: |
-                Replication latency is higher than 3000 seconds.
+                Replication latency exceeds 3000 seconds.
                 
                 This may indicate an issue with the data-processor or the remote replication site.
 
@@ -339,7 +339,7 @@ tests:
         exp_alerts:
           - exp_annotations:
               description: |
-                Replication latency is higher than 3000 seconds.
+                Replication latency exceeds 3000 seconds.
                 
                 This may indicate an issue with the data-processor or the remote replication site.
 
@@ -358,7 +358,7 @@ tests:
         exp_alerts:
           - exp_annotations:
               description: |
-                Replication latency is higher than 3000 seconds.
+                Replication latency exceeds 3000 seconds.
                 
                 This may indicate an issue with the data-processor or the remote replication site.
 
@@ -373,7 +373,7 @@ tests:
         exp_alerts:
           - exp_annotations:
               description: |
-                Replication latency is higher than 6000 seconds.
+                Replication latency exceeds 6000 seconds.
                 
                 This may indicate an issue with the data-processor or the remote replication site.
 

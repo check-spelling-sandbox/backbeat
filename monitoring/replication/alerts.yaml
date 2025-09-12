@@ -135,7 +135,7 @@ groups:
     labels:
       severity: warning
     annotations:
-      description: "Replication error rate is higher than ${replicationErrorsWarningThreshold}%"
+      description: "Replication error rate exceeds ${replicationErrorsWarningThreshold}%"
       summary: "High ratio of replication errors"
 
   - alert: ReplicationErrorsCritical
@@ -152,7 +152,7 @@ groups:
     labels:
       severity: critical
     annotations:
-      description: "Replication error rate is higher than ${replicationErrorsCriticalThreshold}%"
+      description: "Replication error rate exceeds ${replicationErrorsCriticalThreshold}%"
       summary: "Very high ratio of replication errors"
 
   - alert: ReplicationRpoWarning
@@ -165,7 +165,7 @@ groups:
       severity: warning
     annotations:
       description: |
-        Replication RPO is higher than ${rpoWarningThreshold} seconds.
+        Replication RPO exceeds ${rpoWarningThreshold} seconds.
 
         This may indicate an issue with Kafka or the data-processor.
 
@@ -183,7 +183,7 @@ groups:
       severity: critical
     annotations:
       description: |
-        Replication RPO is higher than ${rpoCriticalThreshold} seconds.
+        Replication RPO exceeds ${rpoCriticalThreshold} seconds.
         
         This may indicate an issue with Kafka or the data-processor.
 
@@ -204,7 +204,7 @@ groups:
       severity: warning
     annotations:
       description: |
-        Replication latency is higher than ${latencyWarningThreshold} seconds.
+        Replication latency exceeds ${latencyWarningThreshold} seconds.
         
         This may indicate an issue with the data-processor or the remote replication site.
 
@@ -225,7 +225,7 @@ groups:
       severity: critical
     annotations:
       description: |
-        Replication latency is higher than ${latencyCriticalThreshold} seconds.
+        Replication latency exceeds ${latencyCriticalThreshold} seconds.
         
         This may indicate an issue with the data-processor or the remote replication site.
 
