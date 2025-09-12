@@ -216,7 +216,7 @@ describe('MongoConfigManager ::', () => {
             // reseting config to default one
             changeStreamEvent.fullDocument.value.notificationConfiguration =
                 notificationConfiguration;
-            // emiting the new "update" event
+            // emitting the new "update" event
             manager._handleChangeStreamChangeEvent(changeStreamEvent);
             // cached config must be updated
             assert.deepEqual(manager._cachedConfigs.get('example-bucket-1'),
