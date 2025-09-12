@@ -162,7 +162,7 @@ describe('ConnectorsManager', () => {
         it('should delete old connector when the strategy rejects it', async () => {
             const config = { ...connectorConfig };
             config['topic.namespace.map'] = 'outdated-topic';
-            config['offset.partitiom.name'] = 'partition-name';
+            config['offset.partition.name'] = 'partition-name';
             sinon.stub(connectorsManager._kafkaConnect, 'getConnectorConfig')
                 .resolves(config);
             sinon.stub(connectorsManager._kafkaConnect, 'deleteConnector');
@@ -173,7 +173,7 @@ describe('ConnectorsManager', () => {
         it('should update connector config while keeping the extra fields', async () => {
             const config = { ...connectorConfig };
             config['topic.namespace.map'] = 'outdated-topic';
-            config['offset.partitiom.name'] = 'partition-name';
+            config['offset.partition.name'] = 'partition-name';
             sinon.stub(connectorsManager._kafkaConnect, 'getConnectorConfig')
                 .resolves(config);
             sinon.stub(connectorsManager._pipelineFactory, 'getOldConnectorBucketList').returns(['bucket1']);
@@ -181,7 +181,7 @@ describe('ConnectorsManager', () => {
             const connectors = await connectorsManager._processOldConnectors(['source-connector']);
             assert.strictEqual(connectors.length, 1);
             assert.strictEqual(connectors[0].name, 'source-connector');
-            assert.strictEqual(connectors[0].config['offset.partitiom.name'], 'partition-name');
+            assert.strictEqual(connectors[0].config['offset.partition.name'], 'partition-name');
             assert.strictEqual(connectors[0].config['topic.namespace.map'], '{"*":"oplog"}');
             assert.strictEqual(connectors[0].isRunning, true);
         });
@@ -189,7 +189,7 @@ describe('ConnectorsManager', () => {
         it('should warn when the number of retrieved bucket in a connector exceeds the limit', async () => {
             const config = { ...connectorConfig };
             config['topic.namespace.map'] = 'outdated-topic';
-            config['offset.partitiom.name'] = 'partition-name';
+            config['offset.partition.name'] = 'partition-name';
             sinon.stub(connectorsManager._allocationStrategy, 'maximumBucketsPerConnector').value(1);
             sinon.stub(connectorsManager._kafkaConnect, 'getConnectorConfig')
                 .resolves(config);
