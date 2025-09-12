@@ -2134,7 +2134,7 @@ describe('lifecycle task helper methods', () => {
             const s3target = {
                 listMultipartUploads: () => ({
                     on: sinon.stub().returns(),
-                    // deliberatly failing to avoid going through all the logic
+                    // deliberately failing to avoid going through all the logic
                     send: sinon.stub().yields(errors.NoSuchBucket),
                 }),
             };
@@ -2162,7 +2162,7 @@ describe('lifecycle task helper methods', () => {
             const s3target = {
                 listMultipartUploads: () => ({
                     on: sinon.stub().returns(),
-                    // deliberatly failing to avoid going through all the logic
+                    // deliberately failing to avoid going through all the logic
                     send: sinon.stub().yields(errors.NoSuchBucket),
                 }),
             };
