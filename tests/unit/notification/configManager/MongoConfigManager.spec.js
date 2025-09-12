@@ -213,7 +213,7 @@ describe('MongoConfigManager ::', () => {
             assert.strictEqual(manager._cachedConfigs.count(), 1);
             // same thing should happen with "update" event
             changeStreamEvent.operationType = 'update';
-            // reseting config to default one
+            // resetting config to default one
             changeStreamEvent.fullDocument.value.notificationConfiguration =
                 notificationConfiguration;
             // emitting the new "update" event
