@@ -129,7 +129,7 @@ var _ = Describe("Prometheus Exporter", func() {
 		It("should not leak between per-backend counts", func(done Done) {
 			defer close(done)
 
-			expectMetrics := 12 // 6 possible statuses times 2 destinations
+			expectMetrics := 12 // six possible statuses multiplied by two destinations
 
 			setValues(cs1, cs1.GetTargetLocation("loc1"))
 			setValues(cs2, cs2.GetTargetLocation("loc2"))
