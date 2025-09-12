@@ -39,7 +39,7 @@ const eachLimit = util.promisify(async.eachLimit);
  * @class ConnectorsManager
  *
  * @classdesc ConnectorsManager handles connector logic
- * for spawning connectors and retreiving old ones
+ * for spawning connectors and retrieving old ones
  */
 class ConnectorsManager extends EventEmitter {
 

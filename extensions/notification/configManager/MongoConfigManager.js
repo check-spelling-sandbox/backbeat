@@ -269,7 +269,7 @@ class MongoConfigManager extends BaseConfigManager {
             };
         }
         try {
-            // retreiving bucket metadata from the metastore
+            // retrieving bucket metadata from the metastore
             const bucketMetadata = await this._metastore.findOne({ _id: bucket });
             const notificationConfiguration = bucketMetadata?.value?.notificationConfiguration;
             const delay = (Date.now() - startTime) / 1000;

@@ -25,7 +25,7 @@ class LifecycleDeleteObjectTask extends BackbeatTask {
     }
 
     _getMetadata(entry, log, done) {
-        // only retreiving object metadata once
+        // only retrieving object metadata once
         if (this.objectMD) {
             return done(null, this.objectMD);
         }
