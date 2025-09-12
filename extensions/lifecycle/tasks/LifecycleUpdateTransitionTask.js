@@ -152,7 +152,7 @@ class LifecycleUpdateTransitionTask extends BackbeatTask {
      * And initiates garbage collection of the data
      * @param {ActionQueueEntry} entry - action entry to execute
      * @param {Logger} log - logger instance
-     * @param {Function} done - callback funtion
+     * @param {Function} done - callback function
      * @return {undefined}
      */
     handleSuccessfullTransition(entry, log, done) {
@@ -222,7 +222,7 @@ class LifecycleUpdateTransitionTask extends BackbeatTask {
      * Requeue the object to get transitioned again
      * @param {ActionQueueEntry} entry - action entry to execute
      * @param {Logger} log - logger instance
-     * @param {Function} done - callback funtion
+     * @param {Function} done - callback function
      * @return {undefined}
      */
     handleFailedTransition(entry, log, done) {
@@ -255,7 +255,7 @@ class LifecycleUpdateTransitionTask extends BackbeatTask {
     /**
      *
      * @param {ActionQueueEntry} entry - action entry to execute
-     * @param {Function} done - callback funtion
+     * @param {Function} done - callback function
      * @return {undefined}
      */
     processActionEntry(entry, done) {
