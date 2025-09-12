@@ -758,7 +758,7 @@ class LifecycleConductor {
 
                         return cursor.next()
                             .then(doc => {
-                                // reverse-lookup the name in case it is special and has been
+                                // reverse-lookup the name if it is special and has been
                                 // rewritten by the client
                                 const name = this._mongodbClient.getCollection(doc._id).collectionName;
                                 if (!this._mongodbClient._isSpecialCollection(name)) {

@@ -174,7 +174,7 @@ configuration is rejected when set with put-bucket-replication.
 
 ### Storage limit
 
-There is a risk of filling up the transient source, in case the backlog
+There is a risk of filling up the transient source, if the backlog
 of CRR to the clouds is too important. This may occur in the following
 cases:
 
