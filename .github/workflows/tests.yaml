@@ -14,7 +14,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      # Need to explicitely add package write permissions for dependabot
+      # Need to explicitly add package write permissions for dependabot
       contents: read
       packages: write
     steps:

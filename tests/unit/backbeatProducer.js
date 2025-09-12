@@ -76,7 +76,7 @@ describe('backbeatProducer', () => {
         assert.strictEqual(backbeatProducer._maxRequestSize, 5000020);
     });
 
-    it('should use the explicitely provided maxRequestSize', () => {
+    it('should use the explicitly provided maxRequestSize', () => {
         const backbeatProducer = new BackbeatProducer({
             kafka,
             topic: 'my-test-topic',
