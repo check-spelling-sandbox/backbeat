@@ -799,7 +799,7 @@ class LifecycleTask extends BackbeatTask {
     }
 
     /**
-     * check if rule applies for a given date or calculed days.
+     * check if rule applies for a given date or calculated days.
      * @param {array} rule - bucket lifecycle rule
      * @param {number} daysSinceInitiated - Days passed since entity (object or version) last modified
      * NOTE: entity is not an in-progress MPU or a delete marker.
