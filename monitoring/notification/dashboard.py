@@ -284,7 +284,7 @@ processed_events_in_time = TimeSeries(
         legendFormat='{{target}}',
     )])
 
-bandwith_rate_per_target = TimeSeries(
+bandwidth_rate_per_target = TimeSeries(
     title='Bandwidth',
     description='Bandwidth used to send notifications to targets in a given time',
     dataSource='${DS_PROMETHEUS}',
@@ -499,7 +499,7 @@ dashboard = (
                 processed_events_in_time,
             ], height=7),
             layout.row([
-                bandwith_rate_per_target,
+                bandwidth_rate_per_target,
                 notification_delivery_delay,
             ], height=7),
             RowPanel(title='Cache Metrics'),
