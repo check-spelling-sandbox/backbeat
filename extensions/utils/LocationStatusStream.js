@@ -18,7 +18,7 @@ const ChangeStream = require('../../lib/wrappers/ChangeStream');
 /**
  * @class LocationStatusStream
  *
- * @classdesc uses change streams to listen to a location statuss
+ * @classdesc uses change streams to listen to a location status
  * for a service (crr, ingestion, lifecycle)
  */
 class LocationStatusStream {
