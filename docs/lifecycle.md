@@ -412,7 +412,7 @@ topic is the following:
 To ease manual testing or demos of transition policies, for which delays are at
 least 1 day, the `TRANSITION_ONE_DAY_EARLIER=true` environment variable
 subtracts 1 day from the trigger date. This makes policies with `Days: 1`
-effectively immedidate.
+effectively immediate.
 
 ## Links
 
