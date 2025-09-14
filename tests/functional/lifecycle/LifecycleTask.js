@@ -48,7 +48,7 @@ const backbeatMetadataProxyMock = {
     When using CURRENT, running the lifecycle tasks will internally use
     `Date.now` to compare dates. This means that CURRENT date usage will most
     likely be in the past.
-    To avoid flakiness, I will be setting the day of CURRENT back 2 day to
+    To avoid flakiness, I will be setting the day of CURRENT back 2 days to
     avoid any flakiness.
     When comparing rules, if I set a rule that says "Days: 1", then any objects
     using CURRENT as LastModified should pass. To avoid flakiness, set a rule
