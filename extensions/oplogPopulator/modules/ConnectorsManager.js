@@ -273,7 +273,7 @@ class ConnectorsManager extends EventEmitter {
 
             return false;
         } catch (err) {
-            this._logger.error('Error while spawning or destorying connector', {
+            this._logger.error('Error while spawning or destroying connector', {
                 method: 'ConnectorsManager._spawnOrDestroyConnector',
                 connector: this._name,
                 error: err.description || err.message,
