@@ -64,7 +64,7 @@ const backbeatMetadataProxyMock = {
 const CURRENT = new Date();
 CURRENT.setDate(CURRENT.getDate() - 2);
 CURRENT.setUTCHours(0, 0, 0, 0);
-// 5 days prior to currentDate
+// 5 days before currentDate
 const PAST = new Date(CURRENT);
 PAST.setDate(PAST.getDate() - 5);
 PAST.setUTCHours(0, 0, 0, 0);
