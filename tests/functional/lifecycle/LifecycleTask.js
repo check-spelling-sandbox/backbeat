@@ -1253,7 +1253,7 @@ describe('lifecycle task functional tests', function dF() {
         });
 
         it('should NOT expire a delete marker in a versioning enabled bucket ' +
-        'where there are at least 1 or more non-current versions', done => {
+        'where there is at least one non-current version', done => {
             const bucket = 'test-bucket';
             const bucketEntry = {
                 action: 'testing-islatest',
