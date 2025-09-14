@@ -525,7 +525,7 @@ describe('lifecycle task functional tests', function dF() {
         const { count, entries } = data;
         assert.strictEqual(count.transitions, expectedKeys.length);
         assert.strictEqual(entries.transitions.length, expectedKeys.length);
-        // TODO modify this test when ActionQueueEntry messages are
+        // TODO: modify this test when ActionQueueEntry messages are
         // generated for transition purposes
         entries.transitions.sort(
             (t1, t2) => (t1.target.key < t2.target.key ? -1 : 1));
