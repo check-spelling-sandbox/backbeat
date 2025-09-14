@@ -437,7 +437,7 @@ dashboard = (
             ),
             ConstantInput(
                 name='job_zookeeper',
-                label='zookeeper quorom',
+                label='zookeeper quorum',
                 description='Name of the zookeeper jobs to filter metrics',
                 value='artesca-data-base-quorum-headless',
             ),
