@@ -396,7 +396,7 @@ class LifecycleBucketProcessorMock {
         this._log = new Logger(
             'LifecycleBucketProcessor:test:LifecycleBucketProcessorMock');
 
-        // TODO: only added current working features
+        // TODO: add tests for disabled features
         this._lcConfig = {
             rules: {
                 expiration: { enabled: true },
