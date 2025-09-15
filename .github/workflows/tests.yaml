@@ -258,7 +258,7 @@ jobs:
           docker exec ft-kafka-1 /opt/kafka_2.11-0.10.1.0/bin/zookeeper-shell.sh localhost:2181 create /backbeat/replication-populator/raft-id-dispatcher/owners ""
           docker exec ft-kafka-1 /opt/kafka_2.11-0.10.1.0/bin/zookeeper-shell.sh localhost:2181 create /backbeat/replication-populator/raft-id-dispatcher/leaders ""
           docker exec ft-kafka-1 /opt/kafka_2.11-0.10.1.0/bin/zookeeper-shell.sh localhost:2181 create /backbeat/replication-populator/raft-id-dispatcher/provisions ""
-          # provision raft ids, we configure 4 raft sessions in metadata config
+          # provision raft ids, we configure four raft sessions in metadata config
           docker exec ft-kafka-1 /opt/kafka_2.11-0.10.1.0/bin/zookeeper-shell.sh localhost:2181 create /backbeat/replication-populator/raft-id-dispatcher/provisions/0 ""
           docker exec ft-kafka-1 /opt/kafka_2.11-0.10.1.0/bin/zookeeper-shell.sh localhost:2181 create /backbeat/replication-populator/raft-id-dispatcher/provisions/1 ""
           docker exec ft-kafka-1 /opt/kafka_2.11-0.10.1.0/bin/zookeeper-shell.sh localhost:2181 create /backbeat/replication-populator/raft-id-dispatcher/provisions/2 ""
