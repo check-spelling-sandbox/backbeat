@@ -1708,7 +1708,7 @@ describe('lifecycle task functional tests', function dF() {
             },
             // ncve: 1 day rule should expire with NewerNoncurrentVersion 1, no pagination
             // should expire some
-            // NewerNoncurrentVersions parameter forces some of versions to be kept
+            // NewerNoncurrentVersions parameter forces some versions to be kept
             {
                 message: 'should verify that NoncurrentVersionExpiration ' +
                     ' rule with NewerNoncurrentVersion ' +
