@@ -108,7 +108,7 @@ func (cs *CounterSet) LoadSerialized(s *SerializedCounterSet) {
 
 // CountReplicationStatus updates global counters as well as per-location breakdown
 // based on the replication info. If isTransition is true, pending counters will be
-// decremented to keep the total numbers balanced. Otherwise it is assumed that a new
+// decremented to keep the total numbers balanced. Otherwise, it is assumed that a new
 // object is counted and the net totals are added 1.
 func (cs *CounterSet) CountReplicationStatus(info *types.ObjectReplicationInfo, subject types.HashedNamer, isTransition bool) {
 	cs.Global.CountReplicationStatus(info.Status, subject, isTransition)

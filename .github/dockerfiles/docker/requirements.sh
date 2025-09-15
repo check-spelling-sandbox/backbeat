@@ -12,9 +12,10 @@ apt-get update && apt-get install -y \
     gettext-base
 
 # Install docker
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
+   gpg --dearmor --yes --output /usr/share/keyrings/ubuntu-docker.gpg
 add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   "deb [arch=amd64,signed-by=/usr/share/keyrings/ubuntu-docker.gpg] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
 apt-get update

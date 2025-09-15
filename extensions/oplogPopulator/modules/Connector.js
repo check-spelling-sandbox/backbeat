@@ -290,7 +290,7 @@ class Connector extends EventEmitter {
     _updateConnectorState(bucketsGotModified, timeBeforeUpdate = 0) {
         const currentTime = Date.now();
         // If updating to false (connector got updated), we
-        // need to check if any update occured while asynchronously
+        // need to check if any update occurred while asynchronously
         // updating the connector, as those operations were not included
         // in the update
         const shouldUpdateState = !bucketsGotModified && !!timeBeforeUpdate &&

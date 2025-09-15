@@ -11,7 +11,7 @@ const { v4: uuid } = require('uuid');
 const safeJsonParse = require('./util/safeJsonParse');
 const { LifecycleMetrics } = require('./LifecycleMetrics');
 const LIFECYCLE_BUCKETS_ZK_PATH = '/data/buckets';
-const LIFEYCLE_POPULATOR_CLIENT_ID = 'lifecycle-populator';
+const LIFECYCLE_POPULATOR_CLIENT_ID = 'lifecycle-populator';
 const METASTORE = '__metastore';
 const VaultClientWrapper = require('../utils/VaultClientWrapper');
 
@@ -41,7 +41,7 @@ class LifecycleQueuePopulator extends QueuePopulatorExtension {
 
         if (this._authConfig?.type === authTypeAssumeRole) {
             this.vaultClientWrapper = new VaultClientWrapper(
-                LIFEYCLE_POPULATOR_CLIENT_ID,
+                LIFECYCLE_POPULATOR_CLIENT_ID,
                 params.vaultAdmin,
                 this._authConfig,
                 this.log,
@@ -84,7 +84,7 @@ class LifecycleQueuePopulator extends QueuePopulatorExtension {
     }
 
     /**
-     * Setup a producer for each cold location
+     * Set up a producer for each cold location
      *
      * @param {function} cb - callback function
      * @return {undefined}

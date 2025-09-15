@@ -90,15 +90,15 @@ class CircuitBreakerGroup {
 
     /**
      * Checks if circuit breakers appropriate to our action are triggered
-     * @param {string} worfklowType transition or expiration
+     * @param {string} workflowType transition or expiration
      * @param {string} location location name of object
      * @param {string} topic topic we want to push to
      * @returns {bool} true if it should circuit break
      */
-    tripped(worfklowType, location, topic) {
+    tripped(workflowType, location, topic) {
         const breakers = [];
         ['expiration', 'transition'].forEach(type => {
-            if (worfklowType && type !== worfklowType) {
+            if (workflowType && type !== workflowType) {
                 return;
             }
             if (location && this.circuitBreakers[type].location[location]) {

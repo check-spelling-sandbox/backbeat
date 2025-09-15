@@ -142,7 +142,7 @@ describe('ListRecordStream', () => {
                 // This means that if the function doesn't work
                 // as intended and processed the invalid
                 // event it should be read in first by this event
-                // handler which'll fail the test
+                // handler which will fail the test
                 assert.deepEqual(data, {
                     timestamp: new Date(kafkaMessage.timestamp),
                     db: 'example-bucket',
@@ -170,7 +170,7 @@ describe('ListRecordStream', () => {
                 // This means that if the function doesn't work
                 // as intended and processed the invalid
                 // event it should be read in first by this event
-                // handler which'll fail the test
+                // handler which will fail the test
                 assert.deepEqual(data, {
                     timestamp: new Date(kafkaMessage.timestamp),
                     db: 'example-bucket',

@@ -18,7 +18,7 @@ const ChangeStream = require('../../lib/wrappers/ChangeStream');
 /**
  * @class LocationStatusStream
  *
- * @classdesc uses change streams to listen to a location statuss
+ * @classdesc uses change streams to listen to a location status
  * for a service (crr, ingestion, lifecycle)
  */
 class LocationStatusStream {
@@ -56,7 +56,7 @@ class LocationStatusStream {
     }
 
     /**
-     * Connects to MongoDB using and retreives
+     * Connects to MongoDB using and retrieves
      * the location status collection
      * @param {function} cb callback
      * @returns {undefined} undefined
@@ -154,7 +154,7 @@ class LocationStatusStream {
 
     /**
      * Handler for change stream events
-     * Pauses or resumes a location based on the changes that occured
+     * Pauses or resumes a location based on the changes that occurred
      * in mongo
      * @param {ChangeStreamDocument} changeEvent change stream document
      * @returns {undefined}

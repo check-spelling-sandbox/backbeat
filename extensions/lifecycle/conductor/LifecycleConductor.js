@@ -36,7 +36,7 @@ const BUCKET_CHECKPOINT_PUSH_NUMBER = 50;
 const BUCKET_CHECKPOINT_PUSH_NUMBER_BUCKETD = 50;
 const ACCOUNT_SPLITTER = ':';
 
-const LIFEYCLE_CONDUCTOR_CLIENT_ID = 'lifecycle-conductor';
+const LIFECYCLE_CONDUCTOR_CLIENT_ID = 'lifecycle-conductor';
 
 /**
  * @class LifecycleConductor
@@ -107,7 +107,7 @@ class LifecycleConductor {
         this._batchInProgress = false;
 
         // this cache only needs to be the size of one listing.
-        // worst case scenario is 1 account per bucket:
+        // worst case scenario is one account per bucket:
         // - max size is this._concurrency, rotated entirely at each listing
         // best case scenario is only a few accounts for all buckets
         // - the cache never reaches max size and only a few calls to vault are issued
@@ -125,7 +125,7 @@ class LifecycleConductor {
 
         this.logger = new Logger('Backbeat:Lifecycle:Conductor');
         this.vaultClientWrapper = new VaultClientWrapper(
-            LIFEYCLE_CONDUCTOR_CLIENT_ID,
+            LIFECYCLE_CONDUCTOR_CLIENT_ID,
             this.lcConfig.conductor.vaultAdmin,
             this._authConfig,
             this.logger,
@@ -210,7 +210,7 @@ class LifecycleConductor {
         log.debug('retrieving mongodb in progress indexing jobs');
         return this._mongodbClient.getIndexingJobs(log, (err, jobs) => {
             if (err) {
-                log.debug('failed to retrive mongodb in progress indexing jobs', {
+                log.debug('failed to retrieve mongodb in progress indexing jobs', {
                     method: '_indexesGetInProgressJobs',
                     error: err,
                 });
@@ -363,7 +363,7 @@ class LifecycleConductor {
             this._indexesGetOrCreate(t, log, (err, taskVersion) => {
                 if (err) {
                     // should not happen as indexes methods would
-                    // ignore the errors and fallback to v1 listing
+                    // ignore the errors and fall back to v1 listing
                     return taskDone(null, this._taskToMessage(t, lifecycleTaskVersions.v1, log));
                 }
                 return taskDone(null, this._taskToMessage(t, taskVersion, log));
@@ -425,7 +425,7 @@ class LifecycleConductor {
         async.waterfall([
             next => this._controlBacklog(next),
             // error retrieving in progress jobs should not stop the current batch
-            // fallback to V1 listings
+            // fall back to V1 listings
             next => this._indexesGetInProgressJobs(log, () => next(null)),
             next => {
                 this._batchInProgress = true;
@@ -758,7 +758,7 @@ class LifecycleConductor {
 
                         return cursor.next()
                             .then(doc => {
-                                // reverse-lookup the name in case it is special and has been
+                                // reverse-lookup the name if it is special and has been
                                 // rewritten by the client
                                 const name = this._mongodbClient.getCollection(doc._id).collectionName;
                                 if (!this._mongodbClient._isSpecialCollection(name)) {

@@ -64,7 +64,7 @@ mapped Zenko bucket.
   and `bucketMatch`  option set to true. This ensures that objects appear
   natively without any prefixes.
 * Create a bucket in Zenko and select the S3C location created in the above step
-  as location constraint that is tagged as `Mirror mode`. This will setup the
+  as location constraint that is tagged as `Mirror mode`. This will set up the
   ingestion workflow on the Zenko bucket, allowing 1-1 mapping between the
   bucket defined through Zenko and the RING bucket.
 * Cloudserver tags the bucket with the attribute

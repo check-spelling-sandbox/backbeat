@@ -655,7 +655,7 @@ describe('LifecycleTaskV2 with bucket versioned', () => {
 
 
     it('should not expire delete marker if not old enough to satisfy the age criteria', done => {
-        const expitationRule = [
+        const expirationRule = [
             {
                 Expiration: { Days: 10 },
                 ID: '123',
@@ -678,7 +678,7 @@ describe('LifecycleTaskV2 with bucket versioned', () => {
         } };
 
         const nbRetries = 0;
-        return lifecycleTask.processBucketEntry(expitationRule, bd, s3,
+        return lifecycleTask.processBucketEntry(expirationRule, bd, s3,
         backbeatMetadataProxy, nbRetries, err => {
             assert.ifError(err);
             // test that the orphan listing is triggered
@@ -696,7 +696,7 @@ describe('LifecycleTaskV2 with bucket versioned', () => {
     });
 
     it('should expire delete marker if not old enough but ExpiredObjectDeleteMarker is set to true', done => {
-        const expitationRule = [
+        const expirationRule = [
             {
                 Expiration: { Days: 10 },
                 ID: '123',
@@ -725,7 +725,7 @@ describe('LifecycleTaskV2 with bucket versioned', () => {
         } };
 
         const nbRetries = 0;
-        return lifecycleTask.processBucketEntry(expitationRule, bd, s3,
+        return lifecycleTask.processBucketEntry(expirationRule, bd, s3,
         backbeatMetadataProxy, nbRetries, err => {
             assert.ifError(err);
             // test that the orphan listing is triggered
@@ -746,7 +746,7 @@ describe('LifecycleTaskV2 with bucket versioned', () => {
     });
 
     it('should publish one object entry if object is eligible with ExpiredObjectDeleteMarker', done => {
-        const expitationRule = [
+        const expirationRule = [
             {
                 Expiration: { ExpiredObjectDeleteMarker: true },
                 ID: '123',
@@ -762,7 +762,7 @@ describe('LifecycleTaskV2 with bucket versioned', () => {
         backbeatMetadataProxy.listLifecycleResponse = { contents, isTruncated: false, markerInfo: {} };
 
         const nbRetries = 0;
-        return lifecycleTask.processBucketEntry(expitationRule, bucketData, s3,
+        return lifecycleTask.processBucketEntry(expirationRule, bucketData, s3,
         backbeatMetadataProxy, nbRetries, err => {
             assert.ifError(err);
             // test that the orphan listing is triggered
@@ -782,7 +782,7 @@ describe('LifecycleTaskV2 with bucket versioned', () => {
         });
     });
 
-    it('should publish one bucket entry if listing is trucated', done => {
+    it('should publish one bucket entry if listing is truncated', done => {
         const keyName = 'key1';
         const versionId = 'versionid1';
         const key = keyMock.nonCurrent({ keyName, daysEarlier: 1 });
@@ -860,7 +860,7 @@ describe('LifecycleTaskV2 with bucket versioned', () => {
         });
     });
 
-    it('should publish one bucket and one object entry if object is elligible and listing is trucated', done => {
+    it('should publish one bucket and one object entry if object is eligible and listing is truncated', done => {
         const keyName = 'key1';
         const versionId = 'versionid1';
         const key = keyMock.nonCurrent({ keyName, versionId, daysEarlier: 2 });

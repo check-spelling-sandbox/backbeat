@@ -224,7 +224,7 @@ describe('MongoQueueProcessor', function mqp() {
 
     describe('::_getZenkoObjectMetadata', () => {
         it('should return an error if key does not exist in mongo', done => {
-            const key = 'nonexistant';
+            const key = 'nonexistent';
             const objmd = new ObjectMD().setKey(key);
             const entry = new ObjectQueueEntry(BUCKET, key, objmd);
             mqp._getZenkoObjectMetadata(fakeLogger, entry, VERSION_ID, (err, res) => {
@@ -310,7 +310,7 @@ describe('MongoQueueProcessor', function mqp() {
 
     describe('::_processObjectQueueEntry', () => {
         function validateMetricReport(type, done) {
-            // only 2 types of metric type reports
+            // only two types of metric type reports
             assert(type === 'completed' || type === 'pendingOnly');
 
             const expectedMetricStore = [{

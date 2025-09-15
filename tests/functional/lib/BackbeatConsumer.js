@@ -873,7 +873,7 @@ describe('BackbeatConsumer shutdown tests', () => {
         ], done);
     }).timeout(30000);
 
-    it('should immediatly shuttdown when no in progress tasks', done => {
+    it('should immediately shut down when no in progress tasks', done => {
         setTimeout(() => {
             producer.send([messages[0]], assert.ifError);
         }, 3000);
@@ -898,7 +898,7 @@ describe('BackbeatConsumer shutdown tests', () => {
         ], done);
     }).timeout(30000);
 
-    it('should shuttdown when consumer has been disconnected', done => {
+    it('should shut down when consumer has been disconnected', done => {
         async.series([
             next => {
                 consumer._consumer.disconnect();

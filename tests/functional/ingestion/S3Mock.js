@@ -64,7 +64,7 @@ function setupS3Mock(sourceInfo, cb) {
 }
 
 /**
- * Remove all versions, delete markers, and the given bucket of a ingestion
+ * Remove all versions, delete markers, and the given bucket of an ingestion
  * source
  * @param {Object} sourceInfo - ingestion source info
  * @param {Function} cb - callback(error)

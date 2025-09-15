@@ -48,7 +48,7 @@ const backbeatMetadataProxyMock = {
     When using CURRENT, running the lifecycle tasks will internally use
     `Date.now` to compare dates. This means that CURRENT date usage will most
     likely be in the past.
-    To avoid flakiness, I will be setting the day of CURRENT back 2 day to
+    To avoid flakiness, I will be setting the day of CURRENT back 2 days to
     avoid any flakiness.
     When comparing rules, if I set a rule that says "Days: 1", then any objects
     using CURRENT as LastModified should pass. To avoid flakiness, set a rule
@@ -64,7 +64,7 @@ const backbeatMetadataProxyMock = {
 const CURRENT = new Date();
 CURRENT.setDate(CURRENT.getDate() - 2);
 CURRENT.setUTCHours(0, 0, 0, 0);
-// 5 days prior to currentDate
+// 5 days before currentDate
 const PAST = new Date(CURRENT);
 PAST.setDate(PAST.getDate() - 5);
 PAST.setUTCHours(0, 0, 0, 0);
@@ -396,7 +396,7 @@ class LifecycleBucketProcessorMock {
         this._log = new Logger(
             'LifecycleBucketProcessor:test:LifecycleBucketProcessorMock');
 
-        // TODO: only added current working features
+        // TODO: add tests for disabled features
         this._lcConfig = {
             rules: {
                 expiration: { enabled: true },
@@ -525,7 +525,7 @@ describe('lifecycle task functional tests', function dF() {
         const { count, entries } = data;
         assert.strictEqual(count.transitions, expectedKeys.length);
         assert.strictEqual(entries.transitions.length, expectedKeys.length);
-        // TODO modify this test when ActionQueueEntry messages are
+        // TODO: modify this test when ActionQueueEntry messages are
         // generated for transition purposes
         entries.transitions.sort(
             (t1, t2) => (t1.target.key < t2.target.key ? -1 : 1));
@@ -1253,7 +1253,7 @@ describe('lifecycle task functional tests', function dF() {
         });
 
         it('should NOT expire a delete marker in a versioning enabled bucket ' +
-        'where there are at least 1 or more non-current versions', done => {
+        'where there is at least one non-current version', done => {
             const bucket = 'test-bucket';
             const bucketEntry = {
                 action: 'testing-islatest',
@@ -1404,7 +1404,7 @@ describe('lifecycle task functional tests', function dF() {
             },
             {
                 message: 'should expire a version in a versioning enabled ' +
-                    'bucket with 1 or more non-current versions using basic ' +
+                    'bucket with one or more non-current versions using basic ' +
                     'expiration rule',
                 isDeleteMarker: false,
                 hasNonCurrentVersions: true,
@@ -1415,7 +1415,7 @@ describe('lifecycle task functional tests', function dF() {
             },
             {
                 message: 'should expire a version in a versioning suspended ' +
-                    'bucket with 1 or more non-current versions using basic ' +
+                    'bucket with one or more non-current versions using basic ' +
                     'expiration rule',
                 isDeleteMarker: false,
                 hasNonCurrentVersions: true,
@@ -1426,7 +1426,7 @@ describe('lifecycle task functional tests', function dF() {
             },
             {
                 message: 'should NOT expire a delete marker in a versioning ' +
-                    'enabled bucket with 1 or more non-current versions ' +
+                    'enabled bucket with one or more non-current versions ' +
                     'using basic expiration rule',
                 isDeleteMarker: true,
                 hasNonCurrentVersions: true,
@@ -1437,7 +1437,7 @@ describe('lifecycle task functional tests', function dF() {
             },
             {
                 message: 'should NOT expire a delete marker in a versioning ' +
-                    'suspended bucket with 1 or more non-current versions ' +
+                    'suspended bucket with one or more non-current versions ' +
                     'using basic expiration rule',
                 isDeleteMarker: true,
                 hasNonCurrentVersions: true,
@@ -1708,7 +1708,7 @@ describe('lifecycle task functional tests', function dF() {
             },
             // ncve: 1 day rule should expire with NewerNoncurrentVersion 1, no pagination
             // should expire some
-            // NewerNoncurrentVersions parameter forces some of versions to be kept
+            // NewerNoncurrentVersions parameter forces some versions to be kept
             {
                 message: 'should verify that NoncurrentVersionExpiration ' +
                     ' rule with NewerNoncurrentVersion ' +
@@ -1735,7 +1735,7 @@ describe('lifecycle task functional tests', function dF() {
                     objectCount: 1,
                 },
             },
-            // ncve: 1 day rule should expire with NewerNoncurrentVersion, no pagination
+            // ncve: 1 day rule should expire with NewerNoncurrentVersion 2, no pagination
             // should expire none
             // NewerNoncurrentVersions parameter forces all the versions to be kept
             {

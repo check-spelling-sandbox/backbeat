@@ -105,7 +105,7 @@ class LifecycleBucketProcessor {
 
         this.retryWrapper = new BackbeatTask(lcConfig.bucketProcessor.retry);
 
-        // helper object to facilitate the tracking of the the latest x
+        // helper object to facilitate the tracking of the latest x
         // noncurrent versions of an object when the field
         // `NewerNoncurrentVersions` is present.
         //
@@ -314,7 +314,7 @@ class LifecycleBucketProcessor {
                 }
 
                 if (err.code === 'NoSuchBucket') {
-                    this._log.error('skipping non-existent bucket', { bucket });
+                    this._log.error('skipping nonexistent bucket', { bucket });
                     return cb();
                 }
 
@@ -388,7 +388,7 @@ class LifecycleBucketProcessor {
         producer.once('error', err => {
             this._log.error('error setting up kafka producer', {
                 error: err,
-                method: 'LifecycleBucketProcesso::_setupProducer',
+                method: 'LifecycleBucketProcessor::_setupProducer',
             });
             process.exit(1);
         });

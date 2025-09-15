@@ -151,7 +151,7 @@ describe('ChangeStream', () => {
 
         it('should set the change stream pipeline', done => {
             const watchStub = sinon.stub().returns(new events.EventEmitter());
-            const changeStreamPipline = [
+            const changeStreamPipeline = [
                 {
                     $project: {
                         '_id': 1,
@@ -165,10 +165,10 @@ describe('ChangeStream', () => {
             wrapper._collection = {
                 watch: watchStub,
             };
-            wrapper._pipeline = changeStreamPipline;
+            wrapper._pipeline = changeStreamPipeline;
             assert.doesNotThrow(() => {
                 wrapper.start();
-                assert(watchStub.calledOnceWith(changeStreamPipline, changeStreamParams));
+                assert(watchStub.calledOnceWith(changeStreamPipeline, changeStreamParams));
                 return done();
             });
         });

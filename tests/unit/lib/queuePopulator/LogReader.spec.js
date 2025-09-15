@@ -331,13 +331,13 @@ describe('LogReader', () => {
             // logReader will become stuck as _processReadRecords will never
             // call the callback
             sinon.stub(logReader, '_processReadRecords').returns();
-            let emmitted = false;
+            let emitted = false;
             process.once('SIGTERM', () => {
-                emmitted = true;
+                emitted = true;
             });
             logReader.processLogEntries({}, () => {});
             setTimeout(() => {
-                assert.strictEqual(emmitted, true);
+                assert.strictEqual(emitted, true);
                 delete process.env.CRASH_ON_BATCH_TIMEOUT;
                 done();
             }, 2000);
@@ -349,13 +349,13 @@ describe('LogReader', () => {
             // logReader will become stuck as _processReadRecords will never
             // call the callback
             sinon.stub(logReader, '_processReadRecords').returns();
-            let emmitted = false;
+            let emitted = false;
             process.once('SIGTERM', () => {
-                emmitted = true;
+                emitted = true;
             });
             logReader.processLogEntries({}, () => {});
             setTimeout(() => {
-                assert.strictEqual(emmitted, false);
+                assert.strictEqual(emitted, false);
                 assert.strictEqual(logReader.batchProcessTimedOut(), true);
                 done();
             }, 2000);
@@ -368,12 +368,12 @@ describe('LogReader', () => {
             sinon.stub(logReader, '_processFilterEntries').yields();
             sinon.stub(logReader, '_processPublishEntries').yields();
             sinon.stub(logReader, '_processSaveLogOffset').yields();
-            let emmitted = false;
+            let emitted = false;
             process.once('SIGTERM', () => {
-                emmitted = true;
+                emitted = true;
             });
             logReader.processLogEntries({}, () => {
-                assert.strictEqual(emmitted, false);
+                assert.strictEqual(emitted, false);
                 delete process.env.CRASH_ON_BATCH_TIMEOUT;
                 done();
             });

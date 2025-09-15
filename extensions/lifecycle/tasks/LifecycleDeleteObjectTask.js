@@ -25,7 +25,7 @@ class LifecycleDeleteObjectTask extends BackbeatTask {
     }
 
     _getMetadata(entry, log, done) {
-        // only retreiving object metadata once
+        // only retrieving object metadata once
         if (this.objectMD) {
             return done(null, this.objectMD);
         }
@@ -146,7 +146,7 @@ class LifecycleDeleteObjectTask extends BackbeatTask {
             if (err?.statusCode === errors.MethodNotAllowed.code) {
                 log.warn('deleteObjectFromExpiration API not supported, falling back to deleteObject',
                     logDetails);
-                // fallback to s3 deleteObject when using a cloudserver that
+                // fall back to s3 deleteObject when using a cloudserver that
                 // doesn't support deleteObjectFromExpiration
                 const s3Client = this.getS3Client(accountId);
                 if (!s3Client) {
@@ -278,7 +278,7 @@ class LifecycleDeleteObjectTask extends BackbeatTask {
      * Execute the action specified in action entry to delete an object
      *
      * @param {ActionQueueEntry} entry - action entry to execute
-     * @param {Function} done - callback funtion
+     * @param {Function} done - callback function
      * @return {undefined}
      */
 

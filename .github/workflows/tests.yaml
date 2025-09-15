@@ -14,7 +14,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      # Need to explicitely add package write permissions for dependabot
+      # Need to explicitly add package write permissions for dependabot
       contents: read
       packages: write
     steps:
@@ -136,7 +136,7 @@ jobs:
       run: yarn install --ignore-engines --frozen-lockfile --network-concurrency 1
     - name: Lint markdown
       run: yarn run --silent lint_md
-    - name: Lint Javascript
+    - name: Lint JavaScript
       run: yarn run --silent lint
 
     - name: Run unit tests
@@ -251,14 +251,14 @@ jobs:
         working-directory: .github/dockerfiles/ft
       - name: Create Zookeeper paths for tests with metadata
         run: |-
-          # Setup zookeeper paths for backbeat like we do in federation
+          # Set up zookeeper paths for backbeat like we do in federation
           docker exec ft-kafka-1 /opt/kafka_2.11-0.10.1.0/bin/zookeeper-shell.sh localhost:2181 create /backbeat ""
           docker exec ft-kafka-1 /opt/kafka_2.11-0.10.1.0/bin/zookeeper-shell.sh localhost:2181 create /backbeat/replication-populator ""
           docker exec ft-kafka-1 /opt/kafka_2.11-0.10.1.0/bin/zookeeper-shell.sh localhost:2181 create /backbeat/replication-populator/raft-id-dispatcher ""
           docker exec ft-kafka-1 /opt/kafka_2.11-0.10.1.0/bin/zookeeper-shell.sh localhost:2181 create /backbeat/replication-populator/raft-id-dispatcher/owners ""
           docker exec ft-kafka-1 /opt/kafka_2.11-0.10.1.0/bin/zookeeper-shell.sh localhost:2181 create /backbeat/replication-populator/raft-id-dispatcher/leaders ""
           docker exec ft-kafka-1 /opt/kafka_2.11-0.10.1.0/bin/zookeeper-shell.sh localhost:2181 create /backbeat/replication-populator/raft-id-dispatcher/provisions ""
-          # provision raft ids, we configure 4 raft sessions in metadata config
+          # provision raft ids, we configure four raft sessions in metadata config
           docker exec ft-kafka-1 /opt/kafka_2.11-0.10.1.0/bin/zookeeper-shell.sh localhost:2181 create /backbeat/replication-populator/raft-id-dispatcher/provisions/0 ""
           docker exec ft-kafka-1 /opt/kafka_2.11-0.10.1.0/bin/zookeeper-shell.sh localhost:2181 create /backbeat/replication-populator/raft-id-dispatcher/provisions/1 ""
           docker exec ft-kafka-1 /opt/kafka_2.11-0.10.1.0/bin/zookeeper-shell.sh localhost:2181 create /backbeat/replication-populator/raft-id-dispatcher/provisions/2 ""

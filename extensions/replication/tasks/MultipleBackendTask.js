@@ -229,7 +229,7 @@ class MultipleBackendTask extends ReplicateObject {
             range,
         });
         const doneOnce = jsutil.once(done);
-        // A 0-byte object has no range, otherwise range is inclusive.
+        // A 0-byte object has no range; otherwise, range is inclusive.
         const size = range ? range.end - range.start + 1 : 0;
         let sourceReq = null;
         if (size !== 0) {
@@ -493,7 +493,7 @@ class MultipleBackendTask extends ReplicateObject {
             if (err) {
                 // eslint-disable-next-line no-param-reassign
                 err.origin = 'source';
-                log.error('an error occurred on initating MPU to S3', {
+                log.error('an error occurred on initiating MPU to S3', {
                     method: 'MultipleBackendTask._initiateMPU',
                     entry: sourceEntry.getLogInfo(),
                     origin: 'target',
@@ -623,7 +623,7 @@ class MultipleBackendTask extends ReplicateObject {
                     }
                     if (sourceEntry.getReplicationIsNFS()) {
                         // Check that the object state did not change upon
-                        // succesffuly putting part data to the destination.
+                        // successfully putting part data to the destination.
                         return this._checkMPUState(sourceEntry,
                             uploadId, log, err => next(err, res));
                     }
@@ -1184,7 +1184,7 @@ class MultipleBackendTask extends ReplicateObject {
                         errMessage));
                 }
                 // Only put/delete tags if object was previously
-                // replicated. Otherwise we replicate the whole object
+                // replicated. Otherwise, we replicate the whole object
                 // which should also replicate the updated tags.
                 const dataStoreVersionId = sourceEntry.getReplicationSiteDataStoreVersionId(this.site);
                 if (content.includes('PUT_TAGGING') && dataStoreVersionId) {

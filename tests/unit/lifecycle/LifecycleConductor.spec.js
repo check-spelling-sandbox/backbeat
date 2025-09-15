@@ -262,7 +262,7 @@ describe('Lifecycle Conductor', () => {
             });
         });
 
-        it('should return v1 for non-lifecyled buckets', done => {
+        it('should return v1 for non-lifecycled buckets', done => {
             conductor._bucketSource = 'mongodb';
             conductor._indexesGetOrCreate(getTask(false), log, (err, taskVersion) => {
                 assert.ifError(err);
@@ -288,7 +288,7 @@ describe('Lifecycle Conductor', () => {
                     [], // job state
                     indexesForFeature.lifecycle.v2, // getIndex response
                     null, // metadata proxy error
-                    true, // flag for status ofin progress job retrieval
+                    true, // flag for status of in progress job retrieval
                     'mongodb',
                 ],
                 [
@@ -403,14 +403,14 @@ describe('Lifecycle Conductor', () => {
 
         tests.forEach(([msg, input, expected]) =>
             it(msg, done => {
-                const [inJobs, getIndexes, mockError, getInProgressSucceeded, bucektSource] = input;
+                const [inJobs, getIndexes, mockError, getInProgressSucceeded, bucketSource] = input;
                 const [expectedJobs, putIndexes, expectedVersion] = expected;
 
                 const client = new BackbeatMetadataProxyMock();
                 conductor.clientManager.getBackbeatMetadataProxy = () => client;
                 conductor.activeIndexingJobsRetrieved = getInProgressSucceeded;
                 conductor.activeIndexingJobs = inJobs;
-                conductor._bucketSource = bucektSource;
+                conductor._bucketSource = bucketSource;
                 client.indexesObj = getIndexes;
                 client.error = mockError;
 
@@ -622,7 +622,7 @@ describe('Lifecycle Conductor', () => {
             });
         });
 
-        it('should not use any filter when listing from from mongodb', done => {
+        it('should not use any filter when listing from mongodb', done => {
             const lcConductor = makeLifecycleConductorWithFilters({
                 bucketSource: 'mongodb',
             }, []);
@@ -643,7 +643,7 @@ describe('Lifecycle Conductor', () => {
             });
         });
 
-        it('should filter by account when listing from from mongodb', done => {
+        it('should filter by account when listing from mongodb', done => {
             const lcConductor = makeLifecycleConductorWithFilters({
                 accountsDenied: [`${accountName1}:${account1}`],
                 bucketSource: 'mongodb',
@@ -671,7 +671,7 @@ describe('Lifecycle Conductor', () => {
             });
         });
 
-        it('should filter by bucket when listing from from mongodb', done => {
+        it('should filter by bucket when listing from mongodb', done => {
             const lcConductor = makeLifecycleConductorWithFilters({
                 bucketsDenied: [bucket2],
                 bucketSource: 'mongodb',
@@ -697,7 +697,7 @@ describe('Lifecycle Conductor', () => {
             });
         });
 
-        it('should use the resume marker when listing from from mongodb', done => {
+        it('should use the resume marker when listing from mongodb', done => {
             const lcConductor = makeLifecycleConductorWithFilters({
                 bucketSource: 'mongodb',
             }, []);
@@ -722,7 +722,7 @@ describe('Lifecycle Conductor', () => {
             });
         });
 
-        it('should filter by account and bucket when listing from from mongodb', done => {
+        it('should filter by account and bucket when listing from mongodb', done => {
             const lcConductor = makeLifecycleConductorWithFilters({
                 accountsDenied: [`${accountName1}:${account1}`],
                 bucketsDenied: [bucket2],

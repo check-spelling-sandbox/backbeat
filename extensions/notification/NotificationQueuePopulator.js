@@ -3,7 +3,7 @@ const util = require('util');
 
 const { isMasterKey } = require('arsenal').versioning;
 const { usersBucket, mpuBucketPrefix, supportedNotificationEvents } = require('arsenal').constants;
-const VID_SEPERATOR = require('arsenal').versioning.VersioningConstants.VersionId.Separator;
+const VID_SEPARATOR = require('arsenal').versioning.VersioningConstants.VersionId.Separator;
 const configUtil = require('./utils/config');
 const safeJsonParse = require('./utils/safeJsonParse');
 const messageUtil = require('./utils/message');
@@ -184,7 +184,7 @@ class NotificationQueuePopulator extends QueuePopulatorExtension {
      * @return {String} - versioned base key
      */
     _extractVersionedBaseKey(key) {
-        return key.split(VID_SEPERATOR)[0];
+        return key.split(VID_SEPARATOR)[0];
     }
 
     /**

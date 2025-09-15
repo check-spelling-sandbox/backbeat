@@ -100,7 +100,7 @@ describe('MongoConfigManager ::', () => {
     });
 
     describe('_setupMongoClient ::', () => {
-        it('should setup the mongo client and get metastore collection', () => {
+        it('should set up the mongo client and get metastore collection', () => {
             const manager = new MongoConfigManager(params);
             const getCollectionStub = sinon.stub();
             const mongoCommandStub = sinon.stub().returns({
@@ -133,7 +133,7 @@ describe('MongoConfigManager ::', () => {
             });
         });
 
-        it('should fail when when getting the metadata db', () => {
+        it('should fail when getting the metadata db', () => {
             const manager = new MongoConfigManager(params);
             const getDbStub = sinon.stub().throws(errors.InternalError);
             sinon.stub(MongoClient.prototype, 'connect').resolves({
@@ -213,10 +213,10 @@ describe('MongoConfigManager ::', () => {
             assert.strictEqual(manager._cachedConfigs.count(), 1);
             // same thing should happen with "update" event
             changeStreamEvent.operationType = 'update';
-            // reseting config to default one
+            // resetting config to default one
             changeStreamEvent.fullDocument.value.notificationConfiguration =
                 notificationConfiguration;
-            // emiting the new "update" event
+            // emitting the new "update" event
             manager._handleChangeStreamChangeEvent(changeStreamEvent);
             // cached config must be updated
             assert.deepEqual(manager._cachedConfigs.get('example-bucket-1'),

@@ -115,9 +115,9 @@ other processes (e.g. for MPU).
 ##### CRR data processor
 
 Added a check on source metadata before starting replicating data, to
-skip if the status is COMPLETED for the location the data processor is
-responsible for. This is done on transient source location as well for
-non-transient locations as a sanity check.
+skip if the status is COMPLETED for the location for which the data
+processor is responsible. This is done on transient source location as
+well for non-transient locations as a sanity check.
 
 Rationale: for transient source it's most important to handle
 duplicate kafka entries from the replication topic, and become
@@ -174,7 +174,7 @@ configuration is rejected when set with put-bucket-replication.
 
 ### Storage limit
 
-There is a risk of filling up the transient source, in case the backlog
+There is a risk of filling up the transient source, if the backlog
 of CRR to the clouds is too important. This may occur in the following
 cases:
 

@@ -86,7 +86,7 @@ class OplogPopulatorMetrics {
                 opType,
             }, delta);
         } catch (error) {
-            this._logger.error('An error occured while pushing metric', {
+            this._logger.error('An error occurred while pushing metric', {
                 method: 'OplogPopulatorMetrics.onOplogEventProcessed',
                 error: error.message,
             });
@@ -117,7 +117,7 @@ class OplogPopulatorMetrics {
                 connector: connector.name,
             }, pipelineSize);
         } catch (error) {
-            this._logger.error('An error occured while pushing metrics', {
+            this._logger.error('An error occurred while pushing metrics', {
                 method: 'OplogPopulatorMetrics.onConnectorConfigured',
                 error: error.message,
             });
@@ -135,7 +135,7 @@ class OplogPopulatorMetrics {
         try {
             this.connectors.inc(count);
         } catch (error) {
-            this._logger.error('An error occured while pushing metrics', {
+            this._logger.error('An error occurred while pushing metrics', {
                 method: 'OplogPopulatorMetrics.onConnectorsInstantiated',
                 error: error.message,
             });
@@ -180,7 +180,7 @@ class OplogPopulatorMetrics {
                 }, connector.bucketCount);
             }
         } catch (error) {
-            this._logger.error('An error occured while pushing metrics', {
+            this._logger.error('An error occurred while pushing metrics', {
                 method: 'OplogPopulatorMetrics.onConnectorReconfiguration',
                 error: error.message,
             });
@@ -198,7 +198,7 @@ class OplogPopulatorMetrics {
                 connector: connector.name,
             });
         } catch (error) {
-            this._logger.error('An error occured while pushing metric', {
+            this._logger.error('An error occurred while pushing metric', {
                 method: 'OplogPopulatorMetrics.onConnectorRestarted',
                 error: error.message,
             });
@@ -218,7 +218,7 @@ class OplogPopulatorMetrics {
             this.bucketsExceedingLimit.set(bucketsExceedingLimit);
             this.retainedBuckets.set(retainedBuckets);
         } catch (error) {
-            this._logger.error('An error occured while pushing metric', {
+            this._logger.error('An error occurred while pushing metric', {
                 method: 'OplogPopulatorMetrics.onConnectorsReconciled',
                 error: error.message,
             });

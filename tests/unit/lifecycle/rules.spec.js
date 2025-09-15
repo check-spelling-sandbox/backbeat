@@ -25,7 +25,7 @@ const bucketData = {
 const expectedEmptyResult = {
     listType: undefined,
     params: undefined,
-    remainings: []
+    remaining: []
 };
 
 const options = {
@@ -138,7 +138,7 @@ describe('rulesToParams with versioning Disabled', () => {
                Marker: 'key1',
             },
             listType: 'current',
-            remainings: []
+            remaining: []
         };
         assert.deepStrictEqual(result, expected);
     });
@@ -193,7 +193,7 @@ describe('rulesToParams with versioning Disabled', () => {
                Marker: 'key1',
             },
             listType: 'current',
-            remainings: []
+            remaining: []
         };
         assert.deepStrictEqual(result, expected);
     });
@@ -228,7 +228,7 @@ describe('rulesToParams with versioning Disabled', () => {
                BeforeDate: beforeDate,
             },
             listType: 'current',
-            remainings: []
+            remaining: []
         };
         assert.deepStrictEqual(result, expected);
     });
@@ -262,7 +262,7 @@ describe('rulesToParams with versioning Disabled', () => {
                ExcludedDataStoreName: locationName,
             },
             listType: 'current',
-            remainings: []
+            remaining: []
         };
         assert.deepStrictEqual(result, expected);
     });
@@ -284,7 +284,7 @@ describe('rulesToParams with versioning Disabled', () => {
                MaxKeys: MAX_KEYS,
             },
             listType: 'current',
-            remainings: []
+            remaining: []
         };
 
         const result = rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options);
@@ -311,7 +311,7 @@ describe('rulesToParams with versioning Disabled', () => {
                BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: []
+            remaining: []
          };
 
         const result = rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options);
@@ -338,7 +338,7 @@ describe('rulesToParams with versioning Disabled', () => {
                BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: []
+            remaining: []
          };
 
         const result = rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options);
@@ -367,7 +367,7 @@ describe('rulesToParams with versioning Disabled', () => {
                BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: []
+            remaining: []
          };
 
         const result = rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options);
@@ -398,7 +398,7 @@ describe('rulesToParams with versioning Disabled', () => {
                BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: []
+            remaining: []
          };
 
         const result = rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options);
@@ -424,7 +424,7 @@ describe('rulesToParams with versioning Disabled', () => {
                ExcludedDataStoreName: locationName,
             },
             listType: 'current',
-            remainings: []
+            remaining: []
          };
 
         const result = rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options);
@@ -452,7 +452,7 @@ describe('rulesToParams with versioning Disabled', () => {
                BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: []
+            remaining: []
          };
 
         const result = rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options);
@@ -478,7 +478,7 @@ describe('rulesToParams with versioning Disabled', () => {
                MaxKeys: MAX_KEYS,
             },
             listType: 'current',
-            remainings: []
+            remaining: []
          };
 
         const result = rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options);
@@ -507,7 +507,7 @@ describe('rulesToParams with versioning Disabled', () => {
                BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: []
+            remaining: []
          };
 
         const result = rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options);
@@ -539,7 +539,7 @@ describe('rulesToParams with versioning Disabled', () => {
                BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: []
+            remaining: []
          };
 
         const result = rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options);
@@ -572,7 +572,7 @@ describe('rulesToParams with versioning Disabled', () => {
                ExcludedDataStoreName: locationName,
             },
             listType: 'current',
-            remainings: []
+            remaining: []
          };
 
         const result = rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options);
@@ -605,7 +605,7 @@ describe('rulesToParams with versioning Disabled', () => {
                ExcludedDataStoreName: locationName2,
             },
             listType: 'current',
-            remainings: []
+            remaining: []
          };
 
         const result = rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options);
@@ -637,7 +637,7 @@ describe('rulesToParams with versioning Disabled', () => {
                BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: []
+            remaining: []
          };
 
         const result = rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options);
@@ -670,7 +670,7 @@ describe('rulesToParams with versioning Disabled', () => {
                BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: [{
+            remaining: [{
                 listType: 'current',
                 prefix: 'toto',
                 beforeDate: expectedBeforeDate2,
@@ -707,7 +707,7 @@ describe('rulesToParams with versioning Disabled', () => {
                ExcludedDataStoreName: locationName,
             },
             listType: 'current',
-            remainings: [{
+            remaining: [{
                 listType: 'current',
                 prefix: 'toto',
                 storageClass: locationName2,
@@ -741,7 +741,7 @@ describe('rulesToParams with versioning Disabled', () => {
                MaxKeys: MAX_KEYS,
             },
             listType: 'current',
-            remainings: []
+            remaining: []
          };
 
         const result = rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options);
@@ -773,7 +773,7 @@ describe('rulesToParams with versioning Disabled', () => {
                BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: [{
+            remaining: [{
                 listType: 'current',
                 prefix: 'toto',
                 storageClass: locationName2,
@@ -813,7 +813,7 @@ describe('rulesToParams with versioning Disabled', () => {
                MaxKeys: MAX_KEYS,
             },
             listType: 'current',
-            remainings: [{
+            remaining: [{
                 listType: 'current',
                 prefix: 'toto',
                 beforeDate: expectedBeforeDate,
@@ -856,7 +856,7 @@ describe('rulesToParams with versioning Disabled', () => {
                BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: [{
+            remaining: [{
                 listType: 'current',
                 prefix: 'toto',
                 storageClass: locationName2,
@@ -896,7 +896,7 @@ describe('rulesToParams with versioning Disabled', () => {
                MaxKeys: MAX_KEYS,
             },
             listType: 'current',
-            remainings: [{
+            remaining: [{
                 listType: 'current',
                 prefix: 'toto',
                 storageClass: locationName2,
@@ -936,7 +936,7 @@ describe('rulesToParams with versioning Disabled', () => {
                BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: [{
+            remaining: [{
                 listType: 'current',
                 prefix: 'toto',
                 beforeDate: expectedBeforeDate,
@@ -978,7 +978,7 @@ describe('rulesToParams with versioning Disabled', () => {
                BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: [{
+            remaining: [{
                 listType: 'current',
                 prefix: 'toto',
                 beforeDate: expectedBeforeDate,
@@ -992,7 +992,7 @@ describe('rulesToParams with versioning Disabled', () => {
 });
 
 describe('rulesSupportTransition', () => {
-    it('sould return false if no transition rule supported', () => {
+    it('should return false if no transition rule supported', () => {
         const rules = [
             'Expiration',
             'NoncurrentVersionExpiration',
@@ -1001,7 +1001,7 @@ describe('rulesSupportTransition', () => {
         assert.strictEqual(rulesSupportTransition(rules), false);
     });
 
-    it('sould return true if "transitions" rule supported', () => {
+    it('should return true if "transitions" rule supported', () => {
         const rules = [
             'Expiration',
             'NoncurrentVersionExpiration',
@@ -1011,7 +1011,7 @@ describe('rulesSupportTransition', () => {
         assert.strictEqual(rulesSupportTransition(rules), true);
     });
 
-    it('sould return true if "noncurrentVersionTransition" rule supported', () => {
+    it('should return true if "noncurrentVersionTransition" rule supported', () => {
         const rules = [
             'Expiration',
             'NoncurrentVersionExpiration',

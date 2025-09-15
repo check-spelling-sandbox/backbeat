@@ -384,7 +384,7 @@ class CopyLocationTask extends BackbeatTask {
         log.debug('getting object range', Object.assign({
             range,
         }, actionEntry.getLogInfo()));
-        // A 0-byte object has no range, otherwise range is inclusive.
+        // A 0-byte object has no range; otherwise, range is inclusive.
         const size = range ? range.end - range.start + 1 : 0;
         let sourceReq = null;
         const { bucket, key, version } = actionEntry.getAttribute('target');
@@ -634,7 +634,7 @@ class CopyLocationTask extends BackbeatTask {
         attachReqUids(destReq, log);
         return destReq.send((err, data) => {
             if (err) {
-                log.error('an error occurred on initating MPU to S3',
+                log.error('an error occurred on initiating MPU to S3',
                 Object.assign({
                     method: 'CopyLocationTask._initiateMPU',
                     error: err.message,

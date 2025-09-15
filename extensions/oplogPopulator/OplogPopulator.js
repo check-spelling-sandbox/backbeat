@@ -77,7 +77,7 @@ class OplogPopulator {
 
     /**
      * Connects to MongoDB using the MongoClientInterface
-     * and retreives the metastore collection
+     * and retrieves the metastore collection
      * @returns {Promise|undefined} undefined
      * @throws {InternalError}
      */
@@ -314,7 +314,7 @@ class OplogPopulator {
                 method: 'OplogPopulator.setup',
             });
         } catch (err) {
-            this._logger.error('An error occured when setting up the OplogPopulator', {
+            this._logger.error('An error occurred when setting up the OplogPopulator', {
                 method: 'OplogPopulator.setup',
                 error: err.description || err.message,
             });

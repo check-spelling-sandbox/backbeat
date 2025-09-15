@@ -32,7 +32,7 @@ class QueueProcessor extends EventEmitter {
      * kafka topic dedicated to dispatch messages to a destination/target.
      *
      * @constructor
-     * @param {Object} mongoConfig - mongodb connnection configuration object
+     * @param {Object} mongoConfig - mongodb connection configuration object
      * @param {Object} zkConfig - zookeeper configuration object
      * @param {Object} kafkaConfig - kafka configuration object
      * @param {string} kafkaConfig.hosts - list of kafka brokers
@@ -45,8 +45,8 @@ class QueueProcessor extends EventEmitter {
      *   consumer group ID
      * @param {String} [notifConfig.queueProcessor.concurrency=1000] -
      * how many notifications can be processed concurrently, between
-     * the time they are consumed from the internal Kafka queue and
-     * the time a delivery report is received from the external Kafka
+     * the time that they are consumed from the internal Kafka queue and
+     * the time that a delivery report is received from the external Kafka
      * broker (see also {@link destinationConfig.pollIntervalMs})
      * @param {Object} notifConfig.queueProcessor.retry - Object keyed by location type
      * (e.g., `aws_s3`, `azure`, `gcp`, `scality`), defining retry parameters for each location type.

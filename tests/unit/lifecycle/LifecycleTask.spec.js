@@ -1686,12 +1686,12 @@ describe('lifecycle task helper methods', () => {
             lct2.reset();
         });
 
-        it('should popuplate and return null if heap has space', () => {
+        it('should populate and return null if heap has space', () => {
             const ret = lct2._ncvHeapAdd('testbucket', rules, versions[0]);
             assert.strictEqual(ret, null);
         });
 
-        it('should popuplate and return oldest items from if heap is at capacity', () => {
+        it('should populate and return oldest items from if heap is at capacity', () => {
             let ret = lct2._ncvHeapAdd('testbucket', rules, versions[0]); // 4
             assert.strictEqual(ret, null);
             ret = lct2._ncvHeapAdd('testbucket', rules, versions[2]); // 1
@@ -2134,7 +2134,7 @@ describe('lifecycle task helper methods', () => {
             const s3target = {
                 listMultipartUploads: () => ({
                     on: sinon.stub().returns(),
-                    // deliberatly failing to avoid going through all the logic
+                    // deliberately failing to avoid going through all the logic
                     send: sinon.stub().yields(errors.NoSuchBucket),
                 }),
             };
@@ -2162,7 +2162,7 @@ describe('lifecycle task helper methods', () => {
             const s3target = {
                 listMultipartUploads: () => ({
                     on: sinon.stub().returns(),
-                    // deliberatly failing to avoid going through all the logic
+                    // deliberately failing to avoid going through all the logic
                     send: sinon.stub().yields(errors.NoSuchBucket),
                 }),
             };

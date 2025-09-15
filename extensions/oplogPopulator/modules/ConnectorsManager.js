@@ -39,7 +39,7 @@ const eachLimit = util.promisify(async.eachLimit);
  * @class ConnectorsManager
  *
  * @classdesc ConnectorsManager handles connector logic
- * for spawning connectors and retreiving old ones
+ * for spawning connectors and retrieving old ones
  */
 class ConnectorsManager extends EventEmitter {
 
@@ -96,7 +96,7 @@ class ConnectorsManager extends EventEmitter {
             'topic.namespace.map': JSON.stringify({
                 '*': this._oplogTopic,
             }),
-            // hearbeat prevents having an outdated resume token in the connectors
+            // heartbeat prevents having an outdated resume token in the connectors
             // by constantly updating the offset to the last object in the oplog
             'heartbeat.interval.ms': this._heartbeatIntervalMs,
         };
@@ -186,14 +186,14 @@ class ConnectorsManager extends EventEmitter {
                         allowed: this._allocationStrategy.maximumBucketsPerConnector,
                     });
                 }
-                this._logger.debug('Successfully retreived old connector', {
+                this._logger.debug('Successfully retrieved old connector', {
                     method: 'ConnectorsManager._processOldConnectors',
                     connector: connector.name
                 });
                 return connector;
             }));
             const validConnectors = connectors.filter(c => !!c);
-            this._logger.info('Successfully retreived old connectors', {
+            this._logger.info('Successfully retrieved old connectors', {
                 method: 'ConnectorsManager._processOldConnectors',
                 numberOfConnectors: validConnectors.length,
             });
@@ -273,7 +273,7 @@ class ConnectorsManager extends EventEmitter {
 
             return false;
         } catch (err) {
-            this._logger.error('Error while spawning or destorying connector', {
+            this._logger.error('Error while spawning or destroying connector', {
                 method: 'ConnectorsManager._spawnOrDestroyConnector',
                 connector: this._name,
                 error: err.description || err.message,

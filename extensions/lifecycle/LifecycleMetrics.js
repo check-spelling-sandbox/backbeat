@@ -81,7 +81,7 @@ const lifecycleDuration = ZenkoMetrics.createHistogram({
     buckets: [0.2, 1, 5, 30, 120, 600, 3600, 4 * 3600, 8 * 3600, 16 * 3600, 24 * 3600],
 });
 
-// For all practical purposes, this should be a counter; but we have no garantee that the clock is
+// For all practical purposes, this should be a counter; but we have no guarantee that the clock is
 // monotonic: so this is really a gauge...
 const lifecycleLastTimestamp = ZenkoMetrics.createGauge({
     name: 's3_lifecycle_last_timestamp_ms',

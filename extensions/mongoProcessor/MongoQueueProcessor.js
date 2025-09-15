@@ -210,7 +210,7 @@ class MongoQueueProcessor {
         const key = entry.getObjectKey();
         const params = {};
 
-        // master keys with a 'null' version id comming from
+        // master keys with a 'null' version id coming from
         // a versioning suspended bucket are considered a version
         // we should not specify the version id in this case
         if (versionId && !(entry.getIsNull && entry.getIsNull())) {
@@ -565,7 +565,7 @@ class MongoQueueProcessor {
             const objVal = sourceEntry.getValue();
             const params = {};
 
-            // Versioning suspended entries will have a version id but also a isNull tag.
+            // Versioning suspended entries will have a version id but also an isNull tag.
             // These master keys are considered a version and do not have a duplicate version,
             // we don't specify the version id and repairMaster in this case
             if (sourceEntry.getVersionId() && !sourceEntry.getIsNull()) {
@@ -651,7 +651,7 @@ class MongoQueueProcessor {
     }
 
     /**
-     * Get bucket info in memoize state if exists, otherwise fetch from Mongo
+     * Get bucket info in memoize state if exists; otherwise, fetch from Mongo
      * @param {ObjectQueueEntry} sourceEntry - object metadata entry
      * @param {Logger.newRequestLogger} log - request logger object
      * @param {function} cb - callback(error, BucketInfo)

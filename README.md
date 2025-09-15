@@ -40,8 +40,8 @@ updates in a FIFO order.
 
 This guide assumes the following:
 
-* Using MacOS
-* `brew` is installed (get it [here](https://brew.sh/))
+* Using macOS
+* [`brew`](https://brew.sh/) is installed
 * `node` is installed (version 6.9.5)
 * `yarn` is installed (version 3.10.10)
 * `aws` is installed (version 1.11.1)
@@ -143,7 +143,7 @@ chmod 400 ./tests/utils/keyfile
 VAULT_DB_BACKEND="MONGODB" yarn start
 ```
 
-> mongodb can be installed follwing these [steps](https://github.com/scality/backbeat/blob/development/8.3/docs/run-oob-locally.md#mongo-db-deploy-replica-set)
+> mongodb can be installed following these [steps](https://github.com/scality/backbeat/blob/development/8.3/docs/run-oob-locally.md#mongo-db-deploy-replica-set)
 
 ### CloudServer
 

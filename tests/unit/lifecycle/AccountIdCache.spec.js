@@ -3,7 +3,7 @@
 const assert = require('assert');
 const { AccountIdCache } = require('../../../extensions/utils/AccountIdCache');
 
-describe('accound id cache', () => {
+describe('account id cache', () => {
     it('should store values', () => {
         const cache = new AccountIdCache(2);
 

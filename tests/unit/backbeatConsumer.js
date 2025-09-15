@@ -64,7 +64,7 @@ describe('backbeatConsumer', () => {
                 assert(consumer._consumer.pause.notCalled);
             });
 
-            it('should not call pause when no paritions assigned', () => {
+            it('should not call pause when no partitions assigned', () => {
                 consumer._consumer.isConnected = () => true;
                 consumer._consumer.subscription = () => ['example-topic'];
                 consumer._consumer.assignments = () => [];
@@ -100,7 +100,7 @@ describe('backbeatConsumer', () => {
                 assert(consumer._consumer.resume.notCalled);
             });
 
-            it('should not call resume when no paritions are paused', () => {
+            it('should not call resume when no partitions are paused', () => {
                 consumer._consumer.isConnected = () => true;
                 consumer._consumer.subscription = () => ['example-topic'];
                 consumer._consumer.assignments = () => [];
@@ -157,7 +157,7 @@ describe('backbeatConsumer', () => {
         });
     });
 
-    describe('sequentialy consume from topic', () => {
+    describe('sequentially consume from topic', () => {
         let consumer;
 
         beforeEach(() => {
@@ -192,7 +192,7 @@ describe('backbeatConsumer', () => {
             assert.strictEqual(consumer._tasksCompletedSinceLastConsume, true);
         });
 
-        it('should immediatly try to consume if a task completed since the last consume', done => {
+        it('should immediately try to consume if a task completed since the last consume', done => {
             consumer._concurrency = 2;
             // setting to true to simulate a task completed
             consumer._tasksCompletedSinceLastConsume = true;

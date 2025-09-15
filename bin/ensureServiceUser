@@ -157,7 +157,7 @@ class PolicyHandler extends BaseHandler {
             return this.stsClient.getCallerIdentity((err, res) => {
                 if (err) {
                     // return reject(err);
-                    // Workaround a Vault issue on 8.3 branch
+                    // Work around a Vault issue on 8.3 branch
                     // https://scality.atlassian.net/browse/VAULT-238
                     return resolve('000000000000');
                 }

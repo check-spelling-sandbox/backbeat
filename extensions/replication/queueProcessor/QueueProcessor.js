@@ -106,7 +106,7 @@ const timeElapsedMetric = ZenkoMetrics.createHistogram({
 
 const rpoMetric = ZenkoMetrics.createHistogram({
     name: 's3_replication_rpo_seconds',
-    help: 'Difference between the time the object is updated and the time it ' +
+    help: 'Difference between the time that the object is updated and the time it ' +
           'is picked up for replication',
     labelNames: ['origin', 'serviceName', 'location'],
     buckets: [1, 10, 30, 60, 120, 300, 600],
@@ -116,7 +116,7 @@ const defaultLabels = {
     origin: 'replication',
 };
 /**
- * Contains methods to incrememt different metrics
+ * Contains methods to increment different metrics
  * @typedef {Object} MetricsHandler
  * @property {CounterInc} dataReplicationStatus - Increments the replication status metric for data operation
  * @property {CounterInc} metadataReplicationStatus - Increments the replication status metric for metadata operation
@@ -451,7 +451,7 @@ class QueueProcessor extends EventEmitter {
     }
 
     /**
-     * Setup the Redis Subscriber which listens for actions from other processes
+     * Set up the Redis Subscriber which listens for actions from other processes
      * (i.e. BackbeatAPI for pause/resume)
      * @param {object} redisConfig - redis ha config
      * @return {undefined}

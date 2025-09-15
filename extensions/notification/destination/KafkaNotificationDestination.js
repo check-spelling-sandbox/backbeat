@@ -10,7 +10,7 @@ const notificationSize = ZenkoMetrics.createCounter({
 
 const deliveryLag = ZenkoMetrics.createHistogram({
     name: 's3_notification_queue_processor_delivery_delay_seconds',
-    help: 'Difference between the time a notification is sent and when it gets delivered',
+    help: 'Difference between the time that a notification is sent and when it gets delivered',
     labelNames: ['target', 'status'],
     buckets: [0.001, 0.01, 1, 10, 100, 1000, 10000],
 });

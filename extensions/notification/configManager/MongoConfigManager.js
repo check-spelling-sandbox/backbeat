@@ -233,7 +233,7 @@ class MongoConfigManager extends BaseConfigManager {
     setup(cb) {
         this._setupMongoClient(err => {
             if (err) {
-                this._logger.error('An error occured while setting up mongo client', {
+                this._logger.error('An error occurred while setting up mongo client', {
                     method: 'MongoConfigManager.setup',
                 });
                 return cb(err);
@@ -241,7 +241,7 @@ class MongoConfigManager extends BaseConfigManager {
             try {
                 this._setMetastoreChangeStream();
             } catch (error) {
-                this._logger.error('An error occured while establishing the change stream', {
+                this._logger.error('An error occurred while establishing the change stream', {
                     method: 'MongoConfigManager._setMetastoreChangeStream',
                 });
                 return cb(error);
@@ -269,7 +269,7 @@ class MongoConfigManager extends BaseConfigManager {
             };
         }
         try {
-            // retreiving bucket metadata from the metastore
+            // retrieving bucket metadata from the metastore
             const bucketMetadata = await this._metastore.findOne({ _id: bucket });
             const notificationConfiguration = bucketMetadata?.value?.notificationConfiguration;
             const delay = (Date.now() - startTime) / 1000;
@@ -286,7 +286,7 @@ class MongoConfigManager extends BaseConfigManager {
                 notificationConfiguration
             };
         } catch (err) {
-            this._logger.error('An error occured when getting notification ' +
+            this._logger.error('An error occurred when getting notification ' +
                 'configuration of bucket', {
                 method: 'MongoConfigManager.getConfig',
                 bucket,

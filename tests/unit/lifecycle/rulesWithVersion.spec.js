@@ -30,7 +30,7 @@ const options = {
 const expectedEmptyResult = {
     listType: undefined,
     params: undefined,
-    remainings: []
+    remaining: []
 };
 
 describe('rulesToParams with versioning Enabled', () => {
@@ -79,7 +79,7 @@ describe('rulesToParams with versioning Enabled', () => {
                MaxKeys: MAX_KEYS,
             },
             listType: 'orphan',
-            remainings: []
+            remaining: []
         };
 
         const result = rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options);
@@ -127,7 +127,7 @@ describe('rulesToParams with versioning Enabled', () => {
                Marker: 'key1',
             },
             listType: 'current',
-            remainings: []
+            remaining: []
         };
         assert.deepStrictEqual(result, expected);
     });
@@ -159,7 +159,7 @@ describe('rulesToParams with versioning Enabled', () => {
                Marker: 'key1',
             },
             listType: 'current',
-            remainings: []
+            remaining: []
         };
         assert.deepStrictEqual(result, expected);
     });
@@ -194,7 +194,7 @@ describe('rulesToParams with versioning Enabled', () => {
                BeforeDate: beforeDate,
             },
             listType: 'current',
-            remainings: []
+            remaining: []
         };
         assert.deepStrictEqual(result, expected);
     });
@@ -230,7 +230,7 @@ describe('rulesToParams with versioning Enabled', () => {
                ExcludedDataStoreName: locationName,
             },
             listType: 'noncurrent',
-            remainings: []
+            remaining: []
         };
         assert.deepStrictEqual(result, expected);
     });
@@ -252,7 +252,7 @@ describe('rulesToParams with versioning Enabled', () => {
                MaxKeys: MAX_KEYS,
             },
             listType: 'current',
-            remainings: [{
+            remaining: [{
                 listType: 'orphan',
                 prefix: '',
             }]
@@ -282,7 +282,7 @@ describe('rulesToParams with versioning Enabled', () => {
                BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: [{
+            remaining: [{
                 listType: 'orphan',
                 prefix: '',
                 beforeDate: expectedBeforeDate,
@@ -313,7 +313,7 @@ describe('rulesToParams with versioning Enabled', () => {
                BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: [{
+            remaining: [{
                 listType: 'orphan',
                 prefix,
                 beforeDate: expectedBeforeDate,
@@ -343,7 +343,7 @@ describe('rulesToParams with versioning Enabled', () => {
                ExcludedDataStoreName: locationName,
             },
             listType: 'current',
-            remainings: []
+            remaining: []
          };
 
         const result = rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options);
@@ -371,7 +371,7 @@ describe('rulesToParams with versioning Enabled', () => {
                BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: [{
+            remaining: [{
                 listType: 'orphan',
                 prefix,
                 beforeDate: expectedBeforeDate,
@@ -402,7 +402,7 @@ describe('rulesToParams with versioning Enabled', () => {
                MaxKeys: MAX_KEYS,
             },
             listType: 'current',
-            remainings: [{
+            remaining: [{
                 listType: 'orphan',
                 beforeDate: expectedBeforeDate,
                 prefix,
@@ -435,7 +435,7 @@ describe('rulesToParams with versioning Enabled', () => {
                BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: []
+            remaining: []
          };
 
         const result = rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options);
@@ -467,7 +467,7 @@ describe('rulesToParams with versioning Enabled', () => {
                BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: [{
+            remaining: [{
                 listType: 'orphan',
                 prefix: 'toto',
                 beforeDate: expectedBeforeDate,
@@ -504,7 +504,7 @@ describe('rulesToParams with versioning Enabled', () => {
                ExcludedDataStoreName: locationName,
             },
             listType: 'current',
-            remainings: []
+            remaining: []
          };
 
         const result = rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options);
@@ -536,7 +536,7 @@ describe('rulesToParams with versioning Enabled', () => {
                BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: []
+            remaining: []
          };
 
         const result = rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options);
@@ -569,7 +569,7 @@ describe('rulesToParams with versioning Enabled', () => {
                BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: [{
+            remaining: [{
                 listType: 'current',
                 prefix: 'toto',
                 beforeDate: expectedBeforeDate2,
@@ -614,7 +614,7 @@ describe('rulesToParams with versioning Enabled', () => {
                ExcludedDataStoreName: locationName,
             },
             listType: 'current',
-            remainings: [{
+            remaining: [{
                 listType: 'current',
                 prefix: 'toto',
                 storageClass: locationName2
@@ -649,7 +649,7 @@ describe('rulesToParams with versioning Enabled', () => {
                MaxKeys: MAX_KEYS,
             },
             listType: 'current',
-            remainings: [{
+            remaining: [{
                 listType: 'orphan',
                 prefix: 'toto/titi',
                 beforeDate: expectedBeforeDate,
@@ -685,7 +685,7 @@ describe('rulesToParams with versioning Enabled', () => {
                BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: [{
+            remaining: [{
                 listType: 'current',
                 prefix: 'toto',
                 storageClass: locationName2,
@@ -724,7 +724,7 @@ describe('rulesToParams with versioning Enabled', () => {
                 MaxKeys: MAX_KEYS,
             },
             listType: 'noncurrent',
-            remainings: []
+            remaining: []
         };
 
         const result = rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options);
@@ -757,7 +757,7 @@ describe('rulesToParams with versioning Enabled', () => {
                 BeforeDate: expectedBeforeDate,
             },
             listType: 'noncurrent',
-            remainings: [{
+            remaining: [{
                 listType: 'noncurrent',
                 prefix: 'p2',
                 storageClass: locationName,
@@ -792,14 +792,14 @@ describe('rulesToParams with versioning Enabled', () => {
                 MaxKeys: MAX_KEYS,
             },
             listType: 'noncurrent',
-            remainings: []
+            remaining: []
         };
 
         const result = rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, options);
         assert.deepStrictEqual(result, expected);
     });
 
-    it('with Transtions and NoncurrentVersionTransitions rules', () => {
+    it('with Transitions and NoncurrentVersionTransitions rules', () => {
         const currentDate = Date.now();
         const expectedBeforeDate = (new Date(currentDate - ONE_DAY_IN_SEC)).toISOString();
         const expectedBeforeDate2 = (new Date(currentDate - 2 * ONE_DAY_IN_SEC)).toISOString();
@@ -827,7 +827,7 @@ describe('rulesToParams with versioning Enabled', () => {
                 ExcludedDataStoreName: locationName,
             },
             listType: 'current',
-            remainings: [{
+            remaining: [{
                 listType: 'noncurrent',
                 prefix: '',
                 beforeDate: expectedBeforeDate2,
@@ -839,7 +839,7 @@ describe('rulesToParams with versioning Enabled', () => {
         assert.deepStrictEqual(result, expected);
     });
 
-    it('with Expiration, Transtions, NoncurrentVersionExpiration and NoncurrentVersionTransitions rules', () => {
+    it('with Expiration, Transitions, NoncurrentVersionExpiration and NoncurrentVersionTransitions rules', () => {
         const currentDate = Date.now();
         const expectedBeforeDate = (new Date(currentDate - ONE_DAY_IN_SEC)).toISOString();
         const expectedBeforeDate2 = (new Date(currentDate - 2 * ONE_DAY_IN_SEC)).toISOString();
@@ -878,7 +878,7 @@ describe('rulesToParams with versioning Enabled', () => {
                 BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: [{
+            remaining: [{
                 listType: 'noncurrent',
                 prefix: '',
                 beforeDate: expectedBeforeDate,
@@ -919,7 +919,7 @@ describe('rulesToParams with versioning Enabled', () => {
                 BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: [{
+            remaining: [{
                 listType: 'orphan',
                 prefix: '',
             }]
@@ -970,7 +970,7 @@ describe('rulesToParams with versioning Enabled', () => {
                 MaxKeys: MAX_KEYS,
             },
             listType: 'current',
-            remainings: [
+            remaining: [
                 {
                     prefix: 'p2',
                     listType: 'current',
@@ -1039,7 +1039,7 @@ describe('rulesToParams with versioning Enabled', () => {
                 BeforeDate: expectedBeforeDate,
             },
             listType: 'current',
-            remainings: [
+            remaining: [
                 {
                     prefix: 'p2',
                     listType: 'current',
@@ -1106,7 +1106,7 @@ describe('rulesToParams with versioning Enabled', () => {
                 MaxKeys: MAX_KEYS,
             },
             listType: 'current',
-            remainings: [
+            remaining: [
                 {
                     prefix: 'p2',
                     storageClass: locationName2,

@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD013 -->
 
-# OOB update locally on MacOS
+# OOB update locally on macOS
 
 ## Kafka
 

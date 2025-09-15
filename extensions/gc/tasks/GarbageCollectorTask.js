@@ -315,7 +315,7 @@ class GarbageCollectorTask extends BackbeatTask {
      * @param {ActionQueueEntry} entry - kafka queue entry object
      * @param {String} entry.action - entry action name (e.g. 'deleteData')
      * @param {Object} entry.target - entry action target object
-     * @param {Function} done - callback funtion
+     * @param {Function} done - callback function
      * @return {undefined}
      */
 

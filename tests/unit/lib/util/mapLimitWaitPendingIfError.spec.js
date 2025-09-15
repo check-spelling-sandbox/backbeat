@@ -79,7 +79,7 @@ describe('mapLimitWaitPendingIfError', () => {
     it('should stop processing new requests on error', done => {
         mapLimitWaitPendingIfError([1, 2, 3, 4, 5], 1, (item, itemCb) => {
             // check that no more item is processed after an error
-            // occurs (limit is 1 so item are processed in order)
+            // occurs (limit is 1, so items are processed in order)
             assert(item <= 3);
             if (item === 3) {
                 process.nextTick(() => itemCb(new Error('OOPS'), 'error item'));

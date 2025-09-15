@@ -47,12 +47,12 @@ const MAX_RETRIES = 4;
 // We will retry a few times, but limit the total number of retries to ensure the
 // range is processed timely. Not retrying is not too bad, as the next run will.
 // We are processing 10 entries at a time, so a range should take around 1 second.
-// Since entries get processed in parallel, they will get distributed accross the
+// Since entries get processed in parallel, they will get distributed across the
 // parallel tasks, so the total delay of retries should about 1m30s.
 const MAX_RETRIES_TOTAL = CONCURRENCY_DEFAULT * MAX_RETRIES * 10;
 
 /**
- * compare 2 version by their stale dates returning:
+ * compare two versions by their stale dates returning:
  * - LT (-1) if v1 is less than v2
  * - EQ (0) if v1 equals v2
  * - GT (1) if v1 is greater than v2
@@ -799,7 +799,7 @@ class LifecycleTask extends BackbeatTask {
     }
 
     /**
-     * check if rule applies for a given date or calculed days.
+     * check if rule applies for a given date or calculated days.
      * @param {array} rule - bucket lifecycle rule
      * @param {number} daysSinceInitiated - Days passed since entity (object or version) last modified
      * NOTE: entity is not an in-progress MPU or a delete marker.
@@ -818,7 +818,7 @@ class LifecycleTask extends BackbeatTask {
             // Expiration.ExpiredObjectDeleteMarker rule's action does not apply
             // since object is not a delete marker.
             // AbortIncompleteMultipartUpload.DaysAfterInitiation rule's action does not apply
-            // since in-progress MPUs are beeing handled separetly prior to this checks.
+            // since in-progress MPUs are being handled separately prior to this checks.
         }
 
         if (rule.Transitions && rule.Transitions.length > 0

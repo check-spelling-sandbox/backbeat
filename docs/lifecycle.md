@@ -309,7 +309,7 @@ following:
 
     * if the request succeeds, do a DELETE request on the object
 
-    * NOTE: this has an intrisic race condition, we'll be working on
+    * NOTE: this has an intrinsic race condition, we'll be working on
       implementing the If-Unmodified-Since directly on the DELETE
       operation to get rid of this race.
 
@@ -412,7 +412,7 @@ topic is the following:
 To ease manual testing or demos of transition policies, for which delays are at
 least 1 day, the `TRANSITION_ONE_DAY_EARLIER=true` environment variable
 subtracts 1 day from the trigger date. This makes policies with `Days: 1`
-effectively immedidate.
+effectively immediate.
 
 ## Links
 

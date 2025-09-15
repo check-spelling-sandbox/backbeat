@@ -24,7 +24,7 @@ describe('VaultClientWrapper', () => {
             assert.strictEqual(vaultClientWrapper._vaultConf.port, 8500);
         });
 
-        it('should fallback to authConfig vault if vaultConf is not provided', () => {
+        it('should fall back to authConfig vault if vaultConf is not provided', () => {
             const vaultClientWrapper = new VaultClientWrapper(
                 'id',
                 undefined,

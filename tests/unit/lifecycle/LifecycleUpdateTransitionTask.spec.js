@@ -99,7 +99,7 @@ describe('LifecycleUpdateTransitionTask', () => {
         });
     });
 
-    it('should not update metadata nor GC anything if location does not change',
+    it('should neither update metadata nor GC anything if location does not change',
     done => {
         mdObj.setLocation(newLocation);
         task.processActionEntry(actionEntry, err => {

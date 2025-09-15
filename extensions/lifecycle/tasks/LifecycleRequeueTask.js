@@ -83,7 +83,7 @@ class LifecycleRequeueTask extends BackbeatTask {
      * Execute the action specified in action entry
      *
      * @param {ActionQueueEntry} entry - action entry to execute
-     * @param {Function} done - callback funtion
+     * @param {Function} done - callback function
      * @return {undefined}
      */
     processActionEntry(entry, done) {

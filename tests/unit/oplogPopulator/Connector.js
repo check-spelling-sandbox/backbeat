@@ -166,7 +166,7 @@ describe('Connector', () => {
             assert.notEqual(oldDate, connector._state.lastUpdated);
         });
 
-        it('should update all fields when connector got updated and no other operations occured', () => {
+        it('should update all fields when connector got updated and no other operations occurred', () => {
             connector._state.bucketsGotModified = true;
             const oldDate = connector._state.lastUpdated;
             const now = Date.now();
@@ -177,7 +177,7 @@ describe('Connector', () => {
             assert.notEqual(oldDate, connector._state.lastUpdated);
         });
 
-        it('should only update date incase an opetation happend while updating connector', () => {
+        it('should only update date incase an operation happened while updating connector', () => {
             const oldDate = Date.now();
             connector._state.lastUpdated = oldDate;
             connector._state.bucketsGotModified = true;

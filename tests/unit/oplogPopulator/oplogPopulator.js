@@ -171,7 +171,7 @@ describe('OplogPopulator', () => {
             await assert.rejects(oplogPopulator.setup(), error);
 
             assert(loadOplogHelperClassesStub.calledOnce);
-            assert(loggerErrorStub.calledWith('An error occured when setting up the OplogPopulator', {
+            assert(loggerErrorStub.calledWith('An error occurred when setting up the OplogPopulator', {
                 method: 'OplogPopulator.setup',
                 error: 'InternalError',
             }));

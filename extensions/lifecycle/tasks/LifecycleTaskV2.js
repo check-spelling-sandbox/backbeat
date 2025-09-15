@@ -35,15 +35,15 @@ class LifecycleTaskV2 extends LifecycleTask {
     }
 
     /**
-     * Handles remaning listing asynchronously
-     * @param {array} remainings - array of { prefix, listType, beforeDate }
+     * Handles remaining listing asynchronously
+     * @param {array} remaining - array of { prefix, listType, beforeDate }
      * @param {object} bucketData - bucket data
      * @param {Logger.newRequestLogger} log - logger object
      * @return {undefined}
      */
-    _handleRemainingListings(remainings, bucketData, log) {
-        if (remainings && remainings.length) {
-            remainings.forEach(l => {
+    _handleRemainingListings(remaining, bucketData, log) {
+        if (remaining && remaining.length) {
+            remaining.forEach(l => {
                 const {
                     prefix,
                     listType,
@@ -87,7 +87,7 @@ class LifecycleTaskV2 extends LifecycleTask {
             timeProgressionFactor,
         };
 
-        const { params, listType, remainings } =
+        const { params, listType, remaining } =
             rulesToParams('Disabled', currentDate, bucketLCRules, bucketData, ruleOptions);
         // If params is undefined listings can be skipped.
         // Undefined params can happen when lifecycle configuration rule is disabled for example
@@ -103,7 +103,7 @@ class LifecycleTaskV2 extends LifecycleTask {
 
         // re-queue remaining listings only once
         if (nbRetries === 0) {
-            this._handleRemainingListings(remainings, bucketData, log);
+            this._handleRemainingListings(remaining, bucketData, log);
         }
 
         return this.backbeatMetadataProxy.listLifecycle(listType, params, log,
@@ -159,7 +159,7 @@ class LifecycleTaskV2 extends LifecycleTask {
             timeProgressionFactor,
         };
 
-        const { params, listType, remainings } =
+        const { params, listType, remaining } =
             rulesToParams(versioningStatus, currentDate, bucketLCRules, bucketData, ruleOptions);
         // If params is undefined listings can be skipped.
         // Undefined params can happen when lifecycle configuration rule is disabled for example.
@@ -175,7 +175,7 @@ class LifecycleTaskV2 extends LifecycleTask {
 
         // re-queue remaining listings only once
         if (nbRetries === 0) {
-            this._handleRemainingListings(remainings, bucketData, log);
+            this._handleRemainingListings(remaining, bucketData, log);
         }
 
         return this.backbeatMetadataProxy.listLifecycle(listType, params, log,

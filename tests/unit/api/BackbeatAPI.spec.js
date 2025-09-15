@@ -131,9 +131,9 @@ describe('BackbeatAPI', () => {
         { url: `/_/ingestion/pause/${site}`, method: 'POST' },
         { url: `/_/ingestion/resume/${site}`, method: 'POST' },
         { url: `/_/ingestion/status/${site}`, method: 'GET' },
-        { url: '/_/lifecycle/pause/non-existent', method: 'POST' },
-        { url: '/_/lifecycle/resume/non-existent', method: 'POST' },
-        { url: '/_/lifecycle/status/non-existent', method: 'GET' },
+        { url: '/_/lifecycle/pause/nonexistent', method: 'POST' },
+        { url: '/_/lifecycle/resume/nonexistent', method: 'POST' },
+        { url: '/_/lifecycle/status/nonexistent', method: 'GET' },
     ].forEach(request => {
         it(`should invalidate route: ${request.method} ${request.url}`, () => {
             const req = new BackbeatRequest(request);
@@ -477,7 +477,7 @@ describe('BackbeatAPI', () => {
     });
 
     describe('_getFailedCRRResponse', () => {
-        it('should include role in the resposnse when auth type is "role"', done => {
+        it('should include role in the response when auth type is "role"', done => {
             const objectMD = {
                 'md-model-version': 2,
                 'owner-display-name': 'Bart',
