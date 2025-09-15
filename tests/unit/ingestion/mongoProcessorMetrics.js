@@ -51,7 +51,7 @@ describe('MongoProcessorMetrics', () => {
         // It should return one metric value for each bucket defined (11) plus one for '+Inf'
         assert.strictEqual(bucketMetrics.length, 12);
         // "le" stands for less than or equal to.
-        // So 0 processed ingestions took less than 5ms, 10ms, 25ms, 50ms, 100ms 250ms, 500ms, 750ms, 1s
+        // So zero processed ingestions took less than 5ms, 10ms, 25ms, 50ms, 100ms 250ms, 500ms, 750ms, 1s
         // So one processed ingestion took less than or equal to 5s, 10s and +Inf (biggest value)
         bucketMetrics.forEach(v => {
             if (v.labels.le >= (elapsedTimeInMS / 1000) || v.labels.le === '+Inf') {
