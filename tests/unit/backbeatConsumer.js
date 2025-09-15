@@ -192,7 +192,7 @@ describe('backbeatConsumer', () => {
             assert.strictEqual(consumer._tasksCompletedSinceLastConsume, true);
         });
 
-        it('should immediatly try to consume if a task completed since the last consume', done => {
+        it('should immediately try to consume if a task completed since the last consume', done => {
             consumer._concurrency = 2;
             // setting to true to simulate a task completed
             consumer._tasksCompletedSinceLastConsume = true;

@@ -873,7 +873,7 @@ describe('BackbeatConsumer shutdown tests', () => {
         ], done);
     }).timeout(30000);
 
-    it('should immediatly shuttdown when no in progress tasks', done => {
+    it('should immediately shuttdown when no in progress tasks', done => {
         setTimeout(() => {
             producer.send([messages[0]], assert.ifError);
         }, 3000);
